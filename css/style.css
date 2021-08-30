@@ -1,0 +1,159 @@
+:root {
+    --bs-primary: #3282F7;
+    --bs-success: #68D9A4;
+    --bs-danger: #ED6454;
+    --bg-light: #E7E7E7;
+    --bg-secondary: #C7BEBE;
+
+    --font-logo: 'DM Sans', sans-serif;
+    --font-primary: 'Lato', sans-serif;
+    --font-secondary: 'Roboto', sans-serif;
+}
+
+.bg-light{
+    background-color: var(--bg-light) !important;
+}
+
+.bg-secondary{
+    background-color: var(--bg-secondary);
+}
+
+body{
+    width: 90%;
+    margin: 0 auto;
+    font-family: var(--font-primary);
+    font-weight: 400;
+    font-size: .75rem;
+}
+
+h1{
+    font-family: var(-font--logo);
+    font-size: 2.25rem;
+    font-weight: 700;
+}
+
+h2{
+    font-weight: 400;
+    font-size: 1.125rem;
+}
+
+h3{
+    font-size: 1.125rem;
+    font-weight: 700;
+}
+
+p{
+    font-family: var(--font-secondary);
+}
+
+li{
+    list-style: none;
+    font-weight: 700;
+}
+
+li span{
+    font-weight: 400;
+}
+
+.btn{
+    padding: 1.25rem;
+}
+
+.btn-primary {
+    background-color: var(--bs-primary);
+    border-color: var(--bs-primary);
+}
+
+.btn-success {
+    background-color: var(--bs-success);
+    border-color: var(--bs-success);
+}
+
+.btn-danger {
+    background-color: var(--bs-danger);
+    border-color: var(--bs-danger);
+}
+
+.input-group input, .input-group span {
+    background-color: transparent;
+    border: none;
+}
+
+.form-control{
+    color: black;
+}
+
+.form-control::placeholder{
+    color: rgba(0, 0, 0, .25)
+}
+
+.form-control:focus, .dropdown-input:focus{
+    outline: none;
+    background-color: transparent;
+    border: none;
+    border-color: none;
+    box-shadow: none;
+}
+
+nav {
+    border-radius: 5px;
+}
+
+a img{
+    width: 50%;
+    max-width: 17rem;
+}
+
+.dropdown-input{
+    background-color: transparent;
+    color: white;
+    border: none;
+}
+
+.dropdown-input::placeholder{
+    color: white;
+    opacity: 1;
+}
+
+.dropdown-input:focus::placeholder{
+    opacity: .25;
+}
+
+.dropdown-menu{
+    width: 100%;
+    transform: translateY(-10%);
+}
+
+.dropdown-menu-primary{
+    background-color: var(--bs-primary);
+    border-color: var(--bs-primary);
+}
+
+.dropdown-menu-success{
+    background-color: var(--bs-success);
+    border-color: var(--bs-success);
+}
+
+.dropdown-menu-danger{
+    background-color: var(--bs-danger);
+    border-color: var(--bs-danger);
+}
+
+.dropdown-item{
+    color: white;
+    padding: .25rem 1.25rem;
+}
+
+.card-body{
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 0 0 5px 5px;
+}
+
+.card{
+    border: none;
+}
+
+.card-img-top{
+    border-radius: 5px 5px 0 0;
+}
