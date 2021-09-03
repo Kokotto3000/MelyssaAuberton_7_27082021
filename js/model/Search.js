@@ -1,6 +1,7 @@
 import { recipes } from "../data/recipes.js";
-import { NAV_SEARCH } from "./globals.js";
+import { NAV_SEARCH, SEARCH_SUGGESTIONS } from "./globals.js";
 import Display from "./Display.js";
+import EventsManager from "./EventsManager.js";
 
 export default class Search{
     constructor(){
@@ -11,18 +12,34 @@ export default class Search{
 
     navigationResearch(){
         if(this.checkMessage.test(this.navigationInput.value.trim())){
-            this.value= this.navigationInput.value;
-            console.log(`Je commence la recherche de ${this.value}`);
-            //console.log(this.recipes);
-            //boucle sur les réponses qui créent une instance de display.display
-            /*for(let i=0; i < 3; i++){
-                const displayRecipe= new Display();
-                displayRecipe.displayRecipes();
-            }*/
-            this.recipes.forEach(recipe => {
-                const displayRecipe= new Display();
-                displayRecipe.displayRecipes(recipe);
-            });
+            
+            this.input= this.navigationInput.value.toLowerCase();
+            // console.log(`Je commence la recherche de ${this.input}`);
+
+            this.results= this.recipes.filter(recipe => recipe.name.toLowerCase().includes(this.input));
+
+            if(this.input != ""){
+                //affiche la liste des suggestions
+                SEARCH_SUGGESTIONS.innerHTML= this.results.map(result => `<li class="suggestion">${result.name}</li>`).join("");
+                //remplit la barre input du mots clés selectionné
+                const SUGGESTIONS= document.querySelectorAll(".suggestion");
+                //console.log(SUGGESTIONS)
+                
+                SUGGESTIONS.forEach(suggestion => {
+                    const displayRecipe= new Display();
+                    displayRecipe.displayRecipes(this.results);
+
+                    const suggestions= new EventsManager();
+                    suggestions.onClickSuggestion(suggestion, this.results);
+                    // à mettre dans event manager si possible
+                    // suggestion.addEventListener("click", ()=> {
+                    // this.navigationInput.value= suggestion.textContent;
+                    // //et vide la liste
+                    // SEARCH_SUGGESTIONS.innerHTML= "";
+                    // displayRecipe.displayRecipes(this.results.filter(result=> result.name.toLowerCase().includes(suggestion.textContent.toLowerCase())));
+                    // });
+                });
+            }else SEARCH_SUGGESTIONS.innerHTML= "";            
         }
     }
 }
