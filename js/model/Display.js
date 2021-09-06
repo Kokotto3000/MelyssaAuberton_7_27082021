@@ -9,7 +9,7 @@ export default class Display{
     }
 
     displayRecipes(recipes){
-        console.log(recipes);
+        //console.log(recipes);
         RECIPE_CARDS.innerHTML= "";
         recipes.forEach(recipe => {
             RECIPE_CARDS.innerHTML+= `<div class="col">
