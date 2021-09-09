@@ -8,15 +8,15 @@ export default class Display{
     }
 
     displayIngredients(ingredients){
-        INGREDIENTS_SUGGESTIONS.innerHTML= ingredients.map(ingredient => `<li class="suggestion primary"><button class="dropdown-item" type="button">${ingredient}</button></li>`).join("");
+        INGREDIENTS_SUGGESTIONS.innerHTML= ingredients.map(ingredient => `<li class="suggestion primary" target="ingredient"><button class="dropdown-item" type="button">${ingredient}</button></li>`).join("");
     }
 
     displayAppareils(appareils){
-        APPAREILS_SUGGESTIONS.innerHTML= appareils.map(appareil => `<li class="suggestion success"><button class="dropdown-item" type="button">${appareil}</button></li>`).join("");
+        APPAREILS_SUGGESTIONS.innerHTML= appareils.map(appareil => `<li class="suggestion success" target="appareil"><button class="dropdown-item" type="button">${appareil}</button></li>`).join("");
     }
 
     displayUstensiles(ustensiles){
-        USTENSILES_SUGGESTIONS.innerHTML= ustensiles.map(ustensile => `<li class="suggestion danger"><button class="dropdown-item" type="button">${ustensile}</button></li>`).join("");
+        USTENSILES_SUGGESTIONS.innerHTML= ustensiles.map(ustensile => `<li class="suggestion danger" target="ustensile"><button class="dropdown-item" type="button">${ustensile}</button></li>`).join("");
     }
 
     //template des recettes à afficher avec les données envoyées par search

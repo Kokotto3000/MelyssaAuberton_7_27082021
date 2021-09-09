@@ -1,26 +1,34 @@
 import { NAV_SEARCH } from "./globals.js";
 import Search from "./Search.js";
 import Display from "./Display.js";
+import Filter from "./Filter.js";
 
 export default class EventsManager{
     constructor(){
-        this.search= new Search();
-        this.display= new Display();
         this.navigationInput= NAV_SEARCH.elements["nav-search"];
     }
 
-    init(){
+    initNavigationSearch(){
+        const search= new Search();
         this.navigationInput.addEventListener('input', ()=>{
-            this.search.navigationResearch();
+            search.navigationResearch();
         });
     }
 
-    onClickSuggestion(suggestions){
+    onClickSuggestion(suggestions, results){
+        console.log(suggestions);
+
+        const display= new Display();
+        
         suggestions.forEach(suggestion => {
             suggestion.addEventListener("click", ()=> {
-                // console.log(suggestion);
-                this.display.displaySearchWorlds(suggestion.textContent, suggestion.classList[1]);
-                // et relancer la recherche en fonction du click (filtre)
+                console.log(suggestion.attributes.target.value);
+                display.displaySearchWorlds(suggestion.textContent, suggestion.classList[1]);
+                // filtre des tags
+                const filter= new Filter(results, suggestion.attributes.target.value, suggestion.textContent);
+                // filter.filterByIngredients(suggestion.textContent);
+                // filter.filterByAppareils(suggestion.textContent);
+                // filter.filterByIngredients(suggestion.textContent);
             });
         });   
     }
