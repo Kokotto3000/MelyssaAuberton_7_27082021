@@ -1,4 +1,5 @@
 import { recipes } from "../data/recipes.js";
+import Display from "./Display.js";
 
 export const NAV_SEARCH= document.querySelector('nav form');
 export const INGREDIENTS_SUGGESTIONS= document.getElementById("ingredients-suggestions");
@@ -19,3 +20,12 @@ appareilsArray= Array.from(new Set(appareilsArray));
 export let ustensilesArray= [];
 recipes.forEach(recipe=> recipe.ustensils.forEach(ustensile => ustensilesArray.push(ustensile)));
 ustensilesArray= Array.from(new Set(ustensilesArray));
+
+export function dropDownInit(){
+    const display= new Display();
+    display.displayIngredients(ingredientsArray);
+    display.displayAppareils(appareilsArray);
+    display.displayUstensiles(ustensilesArray);
+    const DROPDOWN_BUTTONS= document.querySelectorAll(".suggestion");
+    return DROPDOWN_BUTTONS;
+}

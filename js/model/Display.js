@@ -1,4 +1,6 @@
-import { RECIPE_CARDS, INGREDIENTS_SUGGESTIONS, APPAREILS_SUGGESTIONS, USTENSILES_SUGGESTIONS, SEARCH_WORLDS } from "./globals.js";
+import { recipes } from "../data/recipes.js";
+import EventsManager from "./EventsManager.js";
+import { RECIPE_CARDS, INGREDIENTS_SUGGESTIONS, APPAREILS_SUGGESTIONS, USTENSILES_SUGGESTIONS, SEARCH_WORLDS, NAV_SEARCH } from "./globals.js";
 // import { recipes } from "../data/recipes.js";
 
 export default class Display{
@@ -50,7 +52,11 @@ export default class Display{
         }else RECIPE_CARDS.innerHTML= "";        
     }
 
-    displaySearchWorlds(world, type){
-        SEARCH_WORLDS.innerHTML += `<button type="button" class="btn btn-${type}">${world}</button>`;
+    displaySearchWorlds(world, type, target, results){
+        SEARCH_WORLDS.innerHTML += `<button type="button" class="btn btn-${type}" target="${target}">${world}</button>`;
+        const events= new EventsManager();
+        events.onClickTags(results);
+        
+        
     }
 }

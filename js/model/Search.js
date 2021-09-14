@@ -9,6 +9,7 @@ export default class Search{
         this.checkMessage= /^[\s\S]{3,}/;
         this.navigationInput= NAV_SEARCH.elements["nav-search"];
         this.display= new Display();
+        
     }
 
     navigationResearch(){
@@ -38,13 +39,13 @@ export default class Search{
 
             // console.log(this.results);
 
-            this.tagsResearch(this.results);
+            this.dropdownResearch(this.results);
+            
     
-        }else this.display.displayRecipes(); 
-
+        }else this.display.displayRecipes();
     }
 
-    tagsResearch(results){
+    dropdownResearch(results){
             // ces tableaux seraient peut-être à mettre dans une nouvelle classe pour être aussi utiliser sans la recherche...
             // création d'un tableau d'ingrédients en fonction des résultats
             let ingredientsArray= [];
@@ -79,5 +80,6 @@ export default class Search{
 
             const events= new EventsManager();
             events.onClickSuggestion(SUGGESTION_BUTTONS, results);
+            
     }
 }
