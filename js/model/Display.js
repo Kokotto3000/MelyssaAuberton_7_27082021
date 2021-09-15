@@ -50,6 +50,7 @@ export default class Display{
 
     displaySearchWorlds(world, type, target, results, typeOfResult){
         SEARCH_WORLDS.innerHTML += `<button type="button" class="btn btn-${type}" target="${target}">${world}</button>`;
+        console.log(results);
         const events= new EventsManager();
         events.onClickTags(results, typeOfResult);  
         

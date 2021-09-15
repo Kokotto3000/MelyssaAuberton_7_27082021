@@ -45,21 +45,21 @@
                 <!--on ne peut pas mettre un input dans un button ;) trouver une autre soluce pour le style bootstrap<form>
                   <input type="button" class="dropdown-input btn btn-primary" type="text" placeholder="Ingrédients">
                 </form>-->
-                <input class="dropdown-input btn btn-primary" type="text" placeholder="Ingrédients">
+                <input class="dropdown-input btn btn-primary" target="ingredients" id="ingredients-input" type="text" placeholder="Ingrédients">
                 <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false" data-bs-display="static">
                   <span class="visually-hidden">Toggle Dropdown</span>
                 </button>
                 <ul class="dropdown-menu dropdown-menu-primary" id="ingredients-suggestions"></ul>
             </div>
             <div class="btn-group me-3 mb-2">
-              <input class="dropdown-input btn btn-success" type="text" placeholder="Appareils">
+              <input class="dropdown-input btn btn-success" target="appareils" id="appareils-input" type="text" placeholder="Appareils">
               <button type="button" class="btn btn-success dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false" data-bs-display="static">
                 <span class="visually-hidden">Toggle Dropdown</span>
               </button>
               <ul class="dropdown-menu dropdown-menu-success" id="appareils-suggestions"></ul>
             </div>
             <div class="btn-group me-3 mb-2">
-              <input class="dropdown-input btn btn-danger" type="text" placeholder="Ustensiles">
+              <input class="dropdown-input btn btn-danger" target="ustensiles" id="ustensiles-input" type="text" placeholder="Ustensiles">
               <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false" data-bs-display="static">
                 <span class="visually-hidden">Toggle Dropdown</span>
               </button>
