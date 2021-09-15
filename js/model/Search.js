@@ -8,8 +8,7 @@ export default class Search{
         this.recipes= recipes;
         this.checkMessage= /^[\s\S]{3,}/;
         this.navigationInput= NAV_SEARCH.elements["nav-search"];
-        this.display= new Display();
-        
+        this.display= new Display();        
     }
 
     navigationResearch(){
@@ -39,13 +38,13 @@ export default class Search{
 
             // console.log(this.results);
 
-            this.dropdownResearch(this.results);
+            this.dropdownResearch(this.results, "input");
             
     
         }else this.display.displayRecipes();
     }
 
-    dropdownResearch(results){
+    dropdownResearch(results, typeOfResult){
             // ces tableaux seraient peut-être à mettre dans une nouvelle classe pour être aussi utiliser sans la recherche...
             // création d'un tableau d'ingrédients en fonction des résultats
             let ingredientsArray= [];
@@ -65,21 +64,12 @@ export default class Search{
             results.forEach(result=> result.ustensils.forEach(ustensile => ustensilesArray.push(ustensile)));
             ustensilesArray= Array.from(new Set(ustensilesArray));
             // console.log(ustensilesArray);
-
-                
+    
             //affichage des recettes
-            this.display.displayRecipes(results);
-            
-            
-            //il faut trier la liste de tous les ingrédients pour envoi ce tableau à displayIngredients
-            this.display.displayIngredients(ingredientsArray);
-            this.display.displayAppareils(appareilsArray);
-            this.display.displayUstensiles(ustensilesArray);
-
-            const SUGGESTION_BUTTONS= document.querySelectorAll(".suggestion");
+            if(typeOfResult === "input" || !typeOfResult) this.display.displayRecipes(results);
 
             const events= new EventsManager();
-            events.onClickSuggestion(SUGGESTION_BUTTONS, results);
+            events.onClickSuggestion(this.display.dropDownInit(ingredientsArray, appareilsArray, ustensilesArray), results, typeOfResult);
             
     }
 }
