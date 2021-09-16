@@ -1,4 +1,4 @@
-export const NAV_SEARCH= document.querySelector('nav form');
+export const NAV_SEARCH= document.getElementById("nav-search");
 export const INGREDIENTS_SUGGESTIONS= document.getElementById("ingredients-suggestions");
 export const APPAREILS_SUGGESTIONS= document.getElementById("appareils-suggestions");
 export const USTENSILES_SUGGESTIONS= document.getElementById("ustensiles-suggestions");

@@ -48,11 +48,10 @@ export default class Display{
         }else RECIPE_CARDS.innerHTML= "";        
     }
 
-    displaySearchWorlds(world, type, target, results, typeOfResult){
-        SEARCH_WORLDS.innerHTML += `<button type="button" class="btn btn-${type}" target="${target}">${world}</button>`;
-        console.log(results);
+    displaySearchWorlds(world, type, target){
+        SEARCH_WORLDS.innerHTML += `<button type="button" class="btn btn-${type}" target="${target}">${world}<span><i class="far fa-times-circle"></i></span></button>`;
         const events= new EventsManager();
-        events.onClickTags(results, typeOfResult);  
+        events.onClickTags();  
         
     }
 }

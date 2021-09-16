@@ -1,7 +1,7 @@
 import { recipes } from "../data/recipes.js";
 import Display from "./Display.js";
 import EventsManager from "./EventsManager.js";
-import { INGREDIENTS_SUGGESTIONS, APPAREILS_SUGGESTIONS, USTENSILES_SUGGESTIONS } from "./globals.js";
+import { INGREDIENTS_SUGGESTIONS, APPAREILS_SUGGESTIONS, USTENSILES_SUGGESTIONS, RECIPE_CARDS } from "./globals.js";
 
 export default class Search{
     constructor(){
@@ -36,9 +36,15 @@ export default class Search{
                 }
             });
 
-            // console.log(this.results);
+            console.log(this.results);
+            if(this.results.length <= 0){
+                // console.log(NAV_SEARCH.elements["nav-search"].placeholder);
+                RECIPE_CARDS.innerHTML= `<p>Aucune recette ne correspond à votre critère. Vous pouvez chercher "tarte aux pommes", "poisson", etc...</p>`;
+            }else{
+                this.dropdownResearch(this.results, "input");
+            }
 
-            this.dropdownResearch(this.results, "input");
+            
             
     
         }else this.display.displayRecipes();
