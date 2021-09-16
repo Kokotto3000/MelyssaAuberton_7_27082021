@@ -1,7 +1,7 @@
 import { recipes } from "../data/recipes.js";
 import Display from "./Display.js";
 import EventsManager from "./EventsManager.js";
-import { INGREDIENTS_SUGGESTIONS, APPAREILS_SUGGESTIONS, USTENSILES_SUGGESTIONS, RECIPE_CARDS } from "./globals.js";
+import { INGREDIENTS_SUGGESTIONS, APPAREILS_SUGGESTIONS, USTENSILES_SUGGESTIONS, RECIPE_CARDS, INGREDIENTS_SUGGESTIONS_LIST } from "./globals.js";
 
 export default class Search{
     constructor(){
@@ -63,13 +63,13 @@ export default class Search{
                             // console.log(ingredients.ingredient);
                         });
                     });
-                    INGREDIENTS_SUGGESTIONS.classList.add("show");
+                    INGREDIENTS_SUGGESTIONS_LIST.classList.add("show");
                     break;
                 case "appareils":
                     this.recipes.forEach(recipe=> {
                         if(recipe.appliance.toLocaleLowerCase().includes(this.input)) this.results.push(recipe);
                     });
-                    APPAREILS_SUGGESTIONS.classList.add("show");
+                    // APPAREILS_SUGGESTIONS.classList.add("show");
                     break;
                 case "ustensiles":
                     console.log(this.recipes);
@@ -79,7 +79,7 @@ export default class Search{
                             if(ustensil.toLowerCase().includes(this.input)) this.results.push(recipe);
                         });
                     });
-                    USTENSILES_SUGGESTIONS.classList.add("show");
+                    // USTENSILES_SUGGESTIONS.classList.add("show");
                     break;
                 default:
                     console.log("problème de dropdown input")
@@ -87,9 +87,9 @@ export default class Search{
                 }
             this.dropdownResearch(this.results, "dropdown", type, this.input);
         }else{
-            INGREDIENTS_SUGGESTIONS.classList.remove("show");
-            APPAREILS_SUGGESTIONS.classList.remove("show");
-            USTENSILES_SUGGESTIONS.classList.remove("show");
+            INGREDIENTS_SUGGESTIONS_LIST.classList.remove("show");
+            // APPAREILS_SUGGESTIONS.classList.remove("show");
+            // USTENSILES_SUGGESTIONS.classList.remove("show");
         }
         
 

@@ -1,4 +1,4 @@
-import { NAV_SEARCH, SEARCH_WORLDS, RECIPE_CARDS, DROPDOWN_INPUTS, INGREDIENTS_SUGGESTIONS, APPAREILS_SUGGESTIONS, USTENSILES_SUGGESTIONS } from "./globals.js";
+import { NAV_SEARCH, SEARCH_WORLDS, RECIPE_CARDS, DROPDOWN_INPUTS, INGREDIENTS_SUGGESTIONS, APPAREILS_SUGGESTIONS, USTENSILES_SUGGESTIONS, BUTTONS, INGREDIENTS_SUGGESTIONS_CONTAINER, INGREDIENTS_DROPDOWN } from "./globals.js";
 import Search from "./Search.js";
 import Display from "./Display.js";
 import Filter from "./Filter.js";
@@ -12,6 +12,7 @@ export default class EventsManager{
         // this.appareilsInput= APPAREILS_INPUT;
         // this.ustensilesInput= USTENSILES_INPUT;
         this.dropdownInputs= DROPDOWN_INPUTS; 
+        this.buttons= BUTTONS;
     }
 
     initResearch(){
@@ -30,15 +31,17 @@ export default class EventsManager{
                 search.dropdownInputResearch(input.attributes.target.value, input.value);
             });
         });
-        // this.ingredientsInput.addEventListener('input', ()=>{
-        //     
-        // });
-        // this.appareilsInput.addEventListener('input', ()=>{
-        //     search.dropdownInputResearch("appareils", this.appareilsInput.value);
-        // });
-        // this.ustensilesInput.addEventListener('input', ()=>{
-        //     search.dropdownInputResearch("ustensiles", this.ustensilesInput.value);
-        // });
+        
+        this.buttons.forEach(button=> {
+            button.addEventListener("click", ()=> {
+                console.log(button.id)
+
+                if(button.id === "ingredient-button") {
+                    INGREDIENTS_DROPDOWN.classList.toggle("invisible-div");
+                    INGREDIENTS_SUGGESTIONS_CONTAINER.classList.toggle("visible-div");
+                }
+            })
+        })
 
     }
 

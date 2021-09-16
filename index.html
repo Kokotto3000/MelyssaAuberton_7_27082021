@@ -35,12 +35,25 @@
             <div id="search-worlds" class="py-1"></div>
 
             <div id="dropdown-buttons" class="py-2">
-                <div class="btn-group me-3 mb-2">
-                    <input class="dropdown-input btn btn-primary" target="ingredients" id="ingredients-input" type="text" placeholder="Ingrédients">
-                    <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false" data-bs-display="static">
-                      <span class="visually-hidden">Toggle Dropdown</span>
+                <div class="btn-group me-3 mb-2 dropdown-container ingredients">
+                    <button id="ingredient-button" type="button" class="btn btn-primary buttons">
+                        <i class="fas fa-chevron-down"></i>
                     </button>
-                    <ul class="dropdown-menu dropdown-menu-primary" id="ingredients-suggestions"></ul>
+                    <div id="ingredients-dropdown">
+                        <input class="dropdown-input btn btn-primary" target="ingredients" id="ingredients-input" type="text" placeholder="Ingrédients">
+                        <!-- sortir le button et le mettre en position absolu -->                                        
+                    </div>  
+
+                    <ul class="dropdown-menu dropdown-menu-primary ingredients-suggestions" id="ingredients-suggestions_list"></ul>
+                  
+                    <div id="ingredients-suggestions_container" class="invisible-div">
+                        <input class="dropdown-input btn btn-primary" target="ingredients" id="ingredients-input" type="text" placeholder="Ingrédients">
+                        <!-- <button id="ingredient-button" type="button" class="btn btn-primary buttons">
+                          <i class="fas fa-chevron-up"></i>
+                        </button> -->
+                        <ul class="dropdown-menu dropdown-menu-primary ingredients-suggestions show"></ul>
+                    </div>
+                  
                 </div>
 
                 <div class="btn-group me-3 mb-2">
@@ -48,7 +61,7 @@
                   <button type="button" class="btn btn-success dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false" data-bs-display="static">
                     <span class="visually-hidden">Toggle Dropdown</span>
                   </button>
-                  <ul class="dropdown-menu dropdown-menu-success" id="appareils-suggestions"></ul>
+                  <ul class="dropdown-menu dropdown-menu-success appareils-suggestions"></ul>
                 </div>
 
                 <div class="btn-group me-3 mb-2">
@@ -56,7 +69,7 @@
                   <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false" data-bs-display="static">
                     <span class="visually-hidden">Toggle Dropdown</span>
                   </button>
-                  <ul class="dropdown-menu dropdown-menu-danger" id="ustensiles-suggestions"></ul>
+                  <ul class="dropdown-menu dropdown-menu-danger ustensiles-suggestions"></ul>
                 </div>
             </div>            
         </section>
