@@ -1,4 +1,19 @@
-import { NAV_SEARCH, SEARCH_WORLDS, RECIPE_CARDS, DROPDOWN_INPUTS, INGREDIENTS_SUGGESTIONS, APPAREILS_SUGGESTIONS, USTENSILES_SUGGESTIONS, BUTTONS, INGREDIENTS_SUGGESTIONS_CONTAINER, INGREDIENTS_DROPDOWN } from "./globals.js";
+import { 
+    NAV_SEARCH,
+    SEARCH_WORLDS,
+    RECIPE_CARDS, 
+    DROPDOWN_INPUTS,
+    BUTTONS, 
+    INGREDIENTS_SUGGESTIONS_CONTAINER, 
+    INGREDIENTS_DROPDOWN,
+    APPAREILS_SUGGESTIONS_CONTAINER,
+    APPAREILS_DROPDOWN,
+    USTENSILES_DROPDOWN,
+    USTENSILES_SUGGESTIONS_CONTAINER, 
+    INGREDIENTS_SUGGESTIONS_LIST,
+    APPAREILS_SUGGESTIONS_LIST,
+    USTENSILES_SUGGESTIONS_LIST
+} from "./globals.js";
 import Search from "./Search.js";
 import Display from "./Display.js";
 import Filter from "./Filter.js";
@@ -36,9 +51,23 @@ export default class EventsManager{
             button.addEventListener("click", ()=> {
                 console.log(button.id)
 
-                if(button.id === "ingredient-button") {
+                //il faut une différence avec l'autre liste ici
+                if(button.id === "ingredients-button") {
                     INGREDIENTS_DROPDOWN.classList.toggle("invisible-div");
                     INGREDIENTS_SUGGESTIONS_CONTAINER.classList.toggle("visible-div");
+                    button.classList.toggle("up");
+                }
+
+                if(button.id === "appareils-button") {
+                    APPAREILS_DROPDOWN.classList.toggle("invisible-div");
+                    APPAREILS_SUGGESTIONS_CONTAINER.classList.toggle("visible-div");
+                    button.classList.toggle("up");
+                }
+
+                if(button.id === "ustensiles-button") {
+                    USTENSILES_DROPDOWN.classList.toggle("invisible-div");
+                    USTENSILES_SUGGESTIONS_CONTAINER.classList.toggle("visible-div");
+                    button.classList.toggle("up");
                 }
             })
         })
@@ -57,9 +86,15 @@ export default class EventsManager{
                 // filtre des tags
                 const filter= new Filter(results, suggestion.attributes.target.value, suggestion.textContent);
                 this.dropdownInputs.forEach(input=> input.value= "");
-                INGREDIENTS_SUGGESTIONS.classList.remove("show");
-                APPAREILS_SUGGESTIONS.classList.remove("show");
-                USTENSILES_SUGGESTIONS.classList.remove("show");
+                INGREDIENTS_SUGGESTIONS_LIST.classList.remove("show");
+                APPAREILS_SUGGESTIONS_LIST.classList.remove("show");
+                USTENSILES_SUGGESTIONS_LIST.classList.remove("show");
+                INGREDIENTS_SUGGESTIONS_CONTAINER.classList.remove("visible-div");
+                INGREDIENTS_DROPDOWN.classList.remove("invisible-div");
+                APPAREILS_SUGGESTIONS_CONTAINER.classList.remove("visible-div");
+                APPAREILS_DROPDOWN.classList.remove("invisible-div");
+                USTENSILES_SUGGESTIONS_CONTAINER.classList.remove("visible-div");
+                USTENSILES_DROPDOWN.classList.remove("invisible-div");
 
                 this.navigationInput.value= "";
             });

@@ -1,7 +1,7 @@
 import { recipes } from "../data/recipes.js";
 import Display from "./Display.js";
 import EventsManager from "./EventsManager.js";
-import { INGREDIENTS_SUGGESTIONS, APPAREILS_SUGGESTIONS, USTENSILES_SUGGESTIONS, RECIPE_CARDS, INGREDIENTS_SUGGESTIONS_LIST } from "./globals.js";
+import { INGREDIENTS_SUGGESTIONS_LIST, APPAREILS_SUGGESTIONS_LIST, USTENSILES_SUGGESTIONS_LIST, RECIPE_CARDS } from "./globals.js";
 
 export default class Search{
     constructor(){
@@ -36,16 +36,14 @@ export default class Search{
                 }
             });
 
-            console.log(this.results);
+            // console.log(this.results);
             if(this.results.length <= 0){
                 // console.log(NAV_SEARCH.elements["nav-search"].placeholder);
+                //mettre ce message dans display pour le réutiliser avec les autres inputs
                 RECIPE_CARDS.innerHTML= `<p>Aucune recette ne correspond à votre critère. Vous pouvez chercher "tarte aux pommes", "poisson", etc...</p>`;
             }else{
                 this.dropdownResearch(this.results, "input");
             }
-
-            
-            
     
         }else this.display.displayRecipes();
     }
@@ -56,7 +54,7 @@ export default class Search{
             this.results= [];
             switch(type){
                 case "ingredients":
-                    console.log(value);
+                    // console.log(value);
                     this.recipes.forEach(recipe=> {
                         recipe.ingredients.forEach(ingredients => {
                             if(ingredients.ingredient.toLowerCase().includes(this.input)) this.results.push(recipe);
@@ -69,27 +67,39 @@ export default class Search{
                     this.recipes.forEach(recipe=> {
                         if(recipe.appliance.toLocaleLowerCase().includes(this.input)) this.results.push(recipe);
                     });
-                    // APPAREILS_SUGGESTIONS.classList.add("show");
+                    APPAREILS_SUGGESTIONS_LIST.classList.add("show");
                     break;
                 case "ustensiles":
-                    console.log(this.recipes);
+                    // console.log(this.recipes);
                     this.recipes.forEach(recipe=> {
-                        console.log(recipe.ustensils)
+                        // console.log(recipe.ustensils)
                         recipe.ustensils.forEach(ustensil => {
                             if(ustensil.toLowerCase().includes(this.input)) this.results.push(recipe);
                         });
                     });
-                    // USTENSILES_SUGGESTIONS.classList.add("show");
+                    USTENSILES_SUGGESTIONS_LIST.classList.add("show");
                     break;
                 default:
-                    console.log("problème de dropdown input")
+                    console.log("problème de dropdown input");
                     break;
                 }
-            this.dropdownResearch(this.results, "dropdown", type, this.input);
+
+                if(this.results.length <= 0){
+                    // console.log(NAV_SEARCH.elements["nav-search"].placeholder);
+                    INGREDIENTS_SUGGESTIONS_LIST.classList.remove("show");
+                    APPAREILS_SUGGESTIONS_LIST.classList.remove("show");
+                    USTENSILES_SUGGESTIONS_LIST.classList.remove("show");
+                    //mettre ce message dans display pour le réutiliser avec les autres inputs
+                    RECIPE_CARDS.innerHTML= `<p>Aucune recette ne correspond à votre critère. Vous pouvez chercher "tarte aux pommes", "poisson", etc...</p>`;
+                }else{
+                    this.dropdownResearch(this.results, "dropdown", type, this.input);
+                }
+            
         }else{
             INGREDIENTS_SUGGESTIONS_LIST.classList.remove("show");
-            // APPAREILS_SUGGESTIONS.classList.remove("show");
-            // USTENSILES_SUGGESTIONS.classList.remove("show");
+            APPAREILS_SUGGESTIONS_LIST.classList.remove("show");
+            USTENSILES_SUGGESTIONS_LIST.classList.remove("show");
+            // this.display.displayRecipes();
         }
         
 

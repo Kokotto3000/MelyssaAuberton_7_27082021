@@ -13,6 +13,14 @@ export default class Display{
         INGREDIENTS_SUGGESTIONS.forEach(suggestion=> {
             suggestion.innerHTML= ingredients.map(ingredient => `<li class="suggestion primary" target="ingredient"><button class="dropdown-item" type="button">${ingredient}</button></li>`).join("");
         });
+
+        APPAREILS_SUGGESTIONS.forEach(suggestion=> {
+            suggestion.innerHTML= appareils.map(appareil => `<li class="suggestion success" target="appareil"><button class="dropdown-item" type="button">${appareil}</button></li>`).join("");
+        });
+
+        USTENSILES_SUGGESTIONS.forEach(suggestion=> {
+            suggestion.innerHTML= ustensiles.map(ustensile => `<li class="suggestion danger" target="ustensile"><button class="dropdown-item" type="button">${ustensile}</button></li>`).join("");
+        });
         // INGREDIENTS_SUGGESTIONS.innerHTML= ingredients.map(ingredient => `<li class="suggestion primary" target="ingredient"><button class="dropdown-item" type="button">${ingredient}</button></li>`).join("");
         // APPAREILS_SUGGESTIONS.innerHTML= appareils.map(appareil => `<li class="suggestion success" target="appareil"><button class="dropdown-item" type="button">${appareil}</button></li>`).join("");
         // USTENSILES_SUGGESTIONS.innerHTML= ustensiles.map(ustensile => `<li class="suggestion danger" target="ustensile"><button class="dropdown-item" type="button">${ustensile}</button></li>`).join("");

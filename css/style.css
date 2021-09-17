@@ -119,11 +119,14 @@ a img{
 .dropdown-container{
     position: relative;
     /* width: min-content; */
+    display: flex;
+    flex-direction: column;
 }
 
 .dropdown-input{
     color: white;
     border: none;
+    text-align: left;
 }
 
 .dropdown-input::placeholder{
@@ -154,6 +157,15 @@ a img{
     gap: 5px 10px;
     max-width: 100%;
 } */
+
+.dropdown-menu.show{
+    position: static;
+    /* display: flex;
+    flex-direction: column; */
+    left:0;
+    width: 100%;
+    z-index: 10;
+}
 
 .dropdown-menu-primary{
     background-color: var(--bs-primary);
@@ -211,22 +223,89 @@ a img{
 
 .visible-div{
     display: block;
+    width: 800px;
 }
 
 .dropdown-container{
     position: relative;
+    text-align: left;
 }
 
 .buttons{
     position: absolute;
-    top: 0;
+    top: 50%;
     right: 0;
+    border-radius: .3rem;
+    transform: translateY(-50%);
+    z-index: 20;
 }
 
-/* .btn-group > .btn {
+.btn-group > .btn {
     position: absolute;
-} */
+}
 
-.dropdown-container.ingredients{
+.dropdown-container{
+    
+    padding: .5rem 1rem;
+    border-radius: .3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* min-width: 30%; */
+}
+
+.ingredients{
     background-color: var(--bs-primary);
+}
+
+.appareils{
+    background-color: var(--bs-success);
+}
+
+.ustensiles{
+    background-color: var(--bs-danger);
+}
+
+#dropdown-buttons{
+    display: flex;
+    /* flex-flow: row wrap; */
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+
+
+.buttons::after{
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f078";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.buttons.up::after{
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f077";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+ul.principal{
+    display: flex;
+    flex-flow: row wrap;
+    /* width: 800px; */
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px 10px;
+    width: 100%;
+    margin: 0;
+}
+
+ul{
+    left: 0;
 }

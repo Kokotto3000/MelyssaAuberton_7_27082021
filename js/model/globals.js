@@ -11,3 +11,10 @@ export const INGREDIENTS_SUGGESTIONS_LIST= document.getElementById("ingredients-
 export const INGREDIENTS_SUGGESTIONS_CONTAINER= document.getElementById("ingredients-suggestions_container");
 export const INGREDIENTS_DROPDOWN= document.getElementById("ingredients-dropdown");
 
+export const APPAREILS_SUGGESTIONS_LIST= document.getElementById("appareils-suggestions_list");
+export const APPAREILS_SUGGESTIONS_CONTAINER= document.getElementById("appareils-suggestions_container");
+export const APPAREILS_DROPDOWN= document.getElementById("appareils-dropdown");
+
+export const USTENSILES_SUGGESTIONS_LIST= document.getElementById("ustensiles-suggestions_list");
+export const USTENSILES_SUGGESTIONS_CONTAINER= document.getElementById("ustensiles-suggestions_container");
+export const USTENSILES_DROPDOWN= document.getElementById("ustensiles-dropdown");
