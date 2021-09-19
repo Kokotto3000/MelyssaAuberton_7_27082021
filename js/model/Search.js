@@ -12,6 +12,8 @@ export default class Search{
     }
 
     navigationResearch(value){
+
+        //attention si moins de 2 caractères => reset
         
         if(this.checkMessage.test(value.trim())){
             //doit chercher dans les name, ingredients, description et non pas transmettre à la div que j'avais faite pas aux tags
@@ -101,8 +103,6 @@ export default class Search{
             USTENSILES_SUGGESTIONS_LIST.classList.remove("show");
             // this.display.displayRecipes();
         }
-        
-
     }
 
     dropdownResearch(results, typeOfResult, type, value){
