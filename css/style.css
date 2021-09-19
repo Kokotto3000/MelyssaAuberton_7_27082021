@@ -148,16 +148,6 @@ a img{
     width: 100%;
 }
 
-/* .dropdown-menu.show{
-    display: flex;
-    flex-flow: row wrap;
-    width: 800px;
-    justify-content: space-between;
-    align-items: center;
-    gap: 5px 10px;
-    max-width: 100%;
-} */
-
 .dropdown-menu.show{
     position: static;
     /* display: flex;
@@ -212,80 +202,7 @@ a img{
     padding: 10px 0;
 }
 
-/*essai dropdown*/
-/* #ingredients{
-    background-color: var(--bs-primary);
-} */
-
-.invisible-div{
-    display: none;
-}
-
-.visible-div{
-    display: block;
-    width: 800px;
-}
-
-.dropdown-container{
-    position: relative;
-    text-align: left;
-}
-
-.buttons{
-    position: absolute;
-    top: 50%;
-    right: 0;
-    border-radius: .3rem;
-    transform: translateY(-50%);
-    z-index: 20;
-}
-
-.btn-group > .btn {
-    position: absolute;
-}
-
-.dropdown-container{
-    
-    padding: .5rem 1rem;
-    border-radius: .3rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    /* min-width: 30%; */
-}
-
-.ingredients{
-    background-color: var(--bs-primary);
-}
-
-.appareils{
-    background-color: var(--bs-success);
-}
-
-.ustensiles{
-    background-color: var(--bs-danger);
-}
-
-#dropdown-buttons{
-    display: flex;
-    /* flex-flow: row wrap; */
-    justify-content: flex-start;
-    align-items: flex-start;
-}
-
-
-
-.buttons::after{
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    content: "\f078";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.buttons.up::after{
+.btn.up::after{
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
     content: "\f077";
@@ -295,10 +212,22 @@ a img{
     transform: translate(-50%, -50%);
 }
 
-ul.principal{
+/*****************test dropdown avec boostrap****************/
+
+.btn-group{
     display: flex;
+    flex-direction: column;
+    max-width: fit-content;
+    border-radius: .3rem;
+    padding: 0;
+}
+
+.dropdown-menu{
+    /* background-color: var(--bs-danger); */
+    position: static !important;
     flex-flow: row wrap;
     /* width: 800px; */
+    transform: none !important;
     justify-content: space-between;
     align-items: center;
     gap: 5px 10px;
@@ -306,6 +235,37 @@ ul.principal{
     margin: 0;
 }
 
-ul{
-    left: 0;
+.dropdown-menu.show{
+    display: flex;
+}
+
+.dropdown-item{
+    max-width: 200px;
+}
+
+.btn::after{
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f078";
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(-50%, -50%);
+}
+
+.btn{
+    display: flex;
+    justify-content: space-between;
+}
+
+.container-fluid{
+    padding: 0;
+}
+
+.btn-group>.btn-group:not(:last-child)>.btn, .btn-group>.btn:not(:last-child):not(.dropdown-toggle) {
+    border-radius: .3rem;
+}
+
+#dropdown-buttons .row{
+    --bs-gutter-x: 0;
 }

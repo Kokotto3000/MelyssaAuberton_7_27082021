@@ -1,12 +1,9 @@
 import EventsManager from "./EventsManager.js";
 import { RECIPE_CARDS, INGREDIENTS_SUGGESTIONS, APPAREILS_SUGGESTIONS, USTENSILES_SUGGESTIONS, SEARCH_WORLDS } from "./globals.js";
-// import { recipes } from "../data/recipes.js";
 
 export default class Display{
-    constructor(){        
-        // this.recipes= recipes;
+    constructor(){
         this.recipeCards= RECIPE_CARDS;
-        // this.dropDownInit(results);
     }
 
     dropDownInit(ingredients, appareils, ustensiles){
@@ -21,16 +18,13 @@ export default class Display{
         USTENSILES_SUGGESTIONS.forEach(suggestion=> {
             suggestion.innerHTML= ustensiles.map(ustensile => `<li class="suggestion danger" target="ustensile"><button class="dropdown-item" type="button">${ustensile}</button></li>`).join("");
         });
-        // INGREDIENTS_SUGGESTIONS.innerHTML= ingredients.map(ingredient => `<li class="suggestion primary" target="ingredient"><button class="dropdown-item" type="button">${ingredient}</button></li>`).join("");
-        // APPAREILS_SUGGESTIONS.innerHTML= appareils.map(appareil => `<li class="suggestion success" target="appareil"><button class="dropdown-item" type="button">${appareil}</button></li>`).join("");
-        // USTENSILES_SUGGESTIONS.innerHTML= ustensiles.map(ustensile => `<li class="suggestion danger" target="ustensile"><button class="dropdown-item" type="button">${ustensile}</button></li>`).join("");
         const DROPDOWN_BUTTONS= document.querySelectorAll(".suggestion");
         return DROPDOWN_BUTTONS;
     }
 
     //template des recettes à afficher avec les données envoyées par search
     displayRecipes(recipes){
-        //console.log(recipes);
+        
         if(recipes){
             RECIPE_CARDS.innerHTML= "";
             recipes.forEach(recipe => {

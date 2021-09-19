@@ -27,105 +27,40 @@
             <input id="nav-search" type="text" name="nav-search" class="form-control" placeholder="Rechercher un ingrédient, appareil, ustensiles ou une recette." aria-label="Search" aria-describedby="basic-addon1">
             <span class="input-group-text" id="basic-addon1" title="search"><i class="fas fa-search"></i></span>          
         </nav>
-          <!-- <ul id="search-suggestions"></ul> -->
     </header>
 
     <main>
         <section id="search">
             <div id="search-worlds" class="py-1"></div>
-
-            <div id="dropdown-buttons" class="py-2">
-                <div class=" me-3 mb-2 dropdown-container ingredients">
-                    
-                    <div id="ingredients-dropdown">
-                        <input class="dropdown-input btn btn-primary" target="ingredients" id="ingredients-input" type="text" placeholder="Ingrédients">
-                        <!-- sortir le button et le mettre en position absolu -->                                        
-                    </div>  
-
-                    <button id="ingredients-button" type="button" class="btn btn-primary buttons btn-lg">
-                      <!-- mettre le symbole en :after pour le manipuler plus facilement -->
-                        <!-- <i class="fas fa-chevron-down"></i> -->
-                    </button>
-
-                    <ul class="dropdown-menu dropdown-menu-primary ingredients-suggestions" id="ingredients-suggestions_list"></ul>
-                  
-                    <div id="ingredients-suggestions_container" class="principal invisible-div">
-                        <input class="dropdown-input btn btn-primary" target="ingredients" id="ingredients-input" type="text" placeholder="Rechercher un ingrédient">
-                        <!-- <button id="ingredients-button" type="button" class="btn btn-primary buttons">
-                          <i class="fas fa-chevron-up"></i>
-                        </button> -->
-                        <ul class="dropdown-menu dropdown-menu-primary ingredients-suggestions principal"></ul>
+              
+            <div id="dropdown-buttons" class="container-fluid py-2">
+                <div class="row">
+                    <div class="btn-group bg-primary me-3 mb-2">
+                        <div type="button" class="btn btn-primary btn-lg" data-bs-toggle="dropdown" aria-expanded="false" >
+                            <input class="dropdown-input btn btn-primary" target="ingredients" id="ingredients-input" type="text" placeholder="Ingrédients">
+                        </div>
+                        <ul class="dropdown-menu dropdown-menu-primary ingredients-suggestions"></ul>
                     </div>
-                  
+
+                    <div class="btn-group bg-success me-3 mb-2">
+                        <div type="button" class="btn btn-success btn-lg" data-bs-toggle="dropdown" aria-expanded="false" >
+                            <input class="dropdown-input btn btn-success" target="appareils" id="appareils-input" type="text" placeholder="Appareils">
+                        </div>
+                        <ul class="dropdown-menu dropdown-menu-success appareils-suggestions"></ul>
+                    </div>
+
+                    <div class="btn-group bg-danger me-3 mb-2">
+                        <div type="button" class="btn btn-danger btn-lg" data-bs-toggle="dropdown" aria-expanded="false" >
+                            <input class="dropdown-input btn btn-danger" target="ustensiles" id="ustensiles-input" type="text" placeholder="Ustensiles">
+                        </div>
+                        <ul class="dropdown-menu dropdown-menu-danger ustensiles-suggestions"></ul>
+                    </div>
                 </div>
-
-                <div class="btn-group me-3 mb-2 dropdown-container appareils">                  
-                  <div id="appareils-dropdown">
-                      <input class="dropdown-input btn btn-success" target="appareils" id="appareils-input" type="text" placeholder="Appareils">
-                      <!-- sortir le button et le mettre en position absolu -->                                        
-                  </div>  
-
-                  <button id="appareils-button" type="button" class="btn btn-success btn-lg buttons">
-                      <!-- <i class="fas fa-chevron-down"></i> -->
-                  </button>
-
-                  <ul class="dropdown-menu dropdown-menu-success appareils-suggestions" id="appareils-suggestions_list"></ul>
-                
-                  <div id="appareils-suggestions_container" class="principal invisible-div">
-                      <input class="dropdown-input btn btn-success" target="appareils" id="appareils-input" type="text" placeholder="Rechercher un appareil">
-                      <!-- <button id="ingredients-button" type="button" class="btn btn-primary buttons">
-                        <i class="fas fa-chevron-up"></i>
-                      </button> -->
-                      <ul class="dropdown-menu dropdown-menu-success appareils-suggestions principal"></ul>
-                  </div>
-                
-              </div>
-
-              <div class="btn-group me-3 mb-2 dropdown-container ustensiles">
-                
-                <div id="ustensiles-dropdown">
-                    <input class="dropdown-input btn btn-danger" target="ustensiles" id="ustensiles-input" type="text" placeholder="Ustensiles">
-                    <!-- sortir le button et le mettre en position absolu -->                                        
-                </div>  
-
-                <button id="ustensiles-button" type="button" class="btn btn-danger buttons btn-lg">
-                    <!-- <i class="fas fa-chevron-down"></i> -->
-                </button>
-
-                <ul class="dropdown-menu dropdown-menu-danger ustensiles-suggestions" id="ustensiles-suggestions_list"></ul>
-              
-                <div id="ustensiles-suggestions_container" class="principal invisible-div">
-                    <input class="dropdown-input btn btn-danger" target="ustensiles" id="ustensiles-input" type="text" placeholder="Rechercher un ustensile">
-                    <!-- <button id="ingredients-button" type="button" class="btn btn-primary buttons">
-                      <i class="fas fa-chevron-up"></i>
-                    </button> -->
-                    <ul class="dropdown-menu dropdown-menu-danger ustensiles-suggestions principal"></ul>
-                </div>
-              
             </div>
-
-                <!-- <div class="btn-group me-3 mb-2">
-                  <input class="dropdown-input btn btn-success" target="appareils" id="appareils-input" type="text" placeholder="Appareils">
-                  <button type="button" class="btn btn-success dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false" data-bs-display="static">
-                    <span class="visually-hidden">Toggle Dropdown</span>
-                  </button>
-                  <ul class="dropdown-menu dropdown-menu-success appareils-suggestions"></ul>
-                </div>
-
-                <div class="btn-group me-3 mb-2">
-                  <input class="dropdown-input btn btn-danger" target="ustensiles" id="ustensiles-input" type="text" placeholder="Ustensiles">
-                  <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false" data-bs-display="static">
-                    <span class="visually-hidden">Toggle Dropdown</span>
-                  </button>
-                  <ul class="dropdown-menu dropdown-menu-danger ustensiles-suggestions"></ul>
-                </div>
-            </div>             -->
         </section>
         
         <section id="cards">
-            <div class="row row-cols-1 row-cols-md-3 g-4">
-        
-            </div>
+            <div class="row row-cols-1 row-cols-md-3 g-4 gx-4"></div>
         </section>
 
     </main>
