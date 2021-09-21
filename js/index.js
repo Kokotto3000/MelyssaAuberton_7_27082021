@@ -7,6 +7,6 @@ import EventsManager from "./model/EventsManager.js";
 
 const arrays= new Arrays();
 // console.log(arrays.navigationArrayGenerator());
-console.log(arrays.dropdownArrayGenerator());
-const events= new EventsManager;
-events.initResearch(arrays.navigationArrayGenerator());
+// console.log(arrays.dropdownArrayGenerator());
+const events= new EventsManager(arrays.navigationArrayGenerator());
+events.initResearch();
