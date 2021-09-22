@@ -35,6 +35,7 @@ export default class Filter{
         // });
         RECIPE_CARDS.innerHTML= "";
         const filteredResults= this.results.filter(result => result.ingredients.includes(ingredient));
+        
         console.log(filteredResults);
 
         const search= new Search(this.array, filteredResults);
@@ -45,6 +46,7 @@ export default class Filter{
             const recipe= this.recipes.find(recipe => recipe.id === result.id);
             console.log(recipe);
             this.display.displayRecipes(recipe);
+            // return;
         }
     }
 

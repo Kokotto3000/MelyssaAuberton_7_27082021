@@ -27,14 +27,14 @@ export default class EventsManager{
             search.navigationResearch(this.navigationInput.value);
         });
 
-        // search.dropdownResearch();
+        // search.dropdownResearch(this.array);
 
-        for(const input of this.dropdownInputs){
-            input.addEventListener("input", ()=>{
-                search.dropdownInputResearch(input.attributes.target.value, input.value);
-            });
-        }
-
+        // for(const input of this.dropdownInputs){
+        //     input.addEventListener("input", ()=>{
+        //         // const filter= new Filter(this.array, input.attributes.target.value, input.value.toLowerCase(), this.array);
+        //         search.dropdownInputResearch(results, input.attributes.target.value, input.value);
+        //     });
+        // }
     }
 
     onClickSuggestion(suggestions, results){
@@ -48,7 +48,7 @@ export default class EventsManager{
                 const filter= new Filter(results, suggestion.attributes.target.value, suggestion.textContent, this.array);
                 // this.dropdownInputs.forEach(input=> input.value= "");
                 this.navigationInput.value= "";
-                this.onClickTags(results);
+                this.onClickTags();
             });
         });   
     }
