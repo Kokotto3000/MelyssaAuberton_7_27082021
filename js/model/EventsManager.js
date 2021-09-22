@@ -2,7 +2,7 @@ import {
     NAV_SEARCH, 
     SEARCH_WORLDS,
     RECIPE_CARDS, 
-    // DROPDOWN_INPUTS
+    DROPDOWN_INPUTS
 } from "./globals.js";
 import Search from "./Search.js";
 import Display from "./Display.js";
@@ -13,9 +13,10 @@ export default class EventsManager{
     constructor(array){
         this.display= new Display();
         this.navigationInput= NAV_SEARCH;
-        // this.dropdownInputs= DROPDOWN_INPUTS;
+        this.dropdownInputs= DROPDOWN_INPUTS;
         this.array= array;
-        console.log(this.array)
+        //trouver une solution pour qu'il ne soit pas appelé 2 fois dès l'initiation
+        // console.log(this.array);
     }
 
     initResearch(){
@@ -28,11 +29,11 @@ export default class EventsManager{
 
         // search.dropdownResearch();
 
-        // this.dropdownInputs.forEach(input=> {
-        //     input.addEventListener("input", ()=> {
-        //         search.dropdownInputResearch(input.attributes.target.value, input.value);
-        //     });
-        // });
+        for(const input of this.dropdownInputs){
+            input.addEventListener("input", ()=>{
+                search.dropdownInputResearch(input.attributes.target.value, input.value);
+            });
+        }
 
     }
 
@@ -46,8 +47,8 @@ export default class EventsManager{
                 // filtre des tags
                 const filter= new Filter(results, suggestion.attributes.target.value, suggestion.textContent, this.array);
                 // this.dropdownInputs.forEach(input=> input.value= "");
-                // this.navigationInput.value= "";
-                this.onClickTags();
+                this.navigationInput.value= "";
+                this.onClickTags(results);
             });
         });   
     }
@@ -55,7 +56,7 @@ export default class EventsManager{
     // //ajouter un event sur les boutons créés pour les supprimer si on reclique dessus
     // //relancer une recherche avec les éléments qui se trouvent dans la zone
     onClickTags(){
-        
+        // console.log(results);
         let SEARCH_WORLDS_BUTTONS= SEARCH_WORLDS.querySelectorAll("button");
         SEARCH_WORLDS_BUTTONS.forEach(button=> {
             button.addEventListener("click", ()=> {
