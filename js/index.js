@@ -1,5 +1,3 @@
-// import EventsManager from "./model/EventsManager.js";
-
 import Arrays from "./model/Arrays.js";
 import EventsManager from "./model/EventsManager.js";
 
