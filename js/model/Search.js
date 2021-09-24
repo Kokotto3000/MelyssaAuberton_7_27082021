@@ -25,12 +25,19 @@ export default class Search{
 
             for(const recipe of this.array){
                 
-                if(recipe.name.includes(this.input) || recipe.description.includes(this.input) || recipe.description.includes(this.input)){
+                if(recipe.name.includes(this.input) || recipe.description.includes(this.input)){
                     this.results.push(recipe);
-                    const recipeIndex= this.array.indexOf(recipe);
-                    
-                    this.display.displayRecipes(this.recipes[recipeIndex]);
-                    
+                    const recipeIndex= this.array.indexOf(recipe);                    
+                    this.display.displayRecipes(this.recipes[recipeIndex]);    
+                }else{
+                    for(const ingredient of recipe.ingredients){
+                        if(ingredient.includes(this.input)){
+                            this.results.push(recipe);
+                            const recipeIndex= this.array.indexOf(recipe);                    
+                            this.display.displayRecipes(this.recipes[recipeIndex]);
+                            break;
+                        }
+                    }
                 }  
             }
 
