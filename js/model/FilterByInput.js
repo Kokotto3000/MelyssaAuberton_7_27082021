@@ -25,7 +25,7 @@ export default class FilterByInput{
         }
 
         this.display= new Display();
-        this.suggestions= this.display.dropDownInit(this.ingredientsArray, this.appareilsArray, this.ustensilesArray);
+        this.suggestions= this.display.displayDropdowns(this.ingredientsArray, this.appareilsArray, this.ustensilesArray);
         this.events= new EventsManager(this.array);
         this.events.onClickSuggestion(this.suggestions, this.results);
         

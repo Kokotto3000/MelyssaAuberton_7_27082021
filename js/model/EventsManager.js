@@ -6,7 +6,7 @@ import {
 } from "./globals.js";
 import Search from "./Search.js";
 import Display from "./Display.js";
-import Filter from "./Filter.js";
+import FilterByClick from "./FilterByClick.js";
 import FilterByInput from "./FilterByInput.js";
 
 
@@ -44,9 +44,9 @@ export default class EventsManager{
                     if(buttonsName.includes(suggestion.textContent)) return;                    
                 }
                     
-                this.display.displaySearchWorlds(suggestion.textContent, suggestion.classList[1], suggestion.attributes.target.value);
+                this.display.displayTags(suggestion.textContent, suggestion.classList[1], suggestion.attributes.target.value);
                 // filtre des tags
-                const filter= new Filter(results, suggestion.attributes.target.value, suggestion.textContent, this.array);
+                const filter= new FilterByClick(results, suggestion.attributes.target.value, suggestion.textContent, this.array);
 
                 this.dropdownInputs.forEach(input=> input.value= "");
                 this.navigationInput.value= "";
@@ -76,7 +76,7 @@ export default class EventsManager{
                 
                 if(SEARCH_WORLDS_BUTTONS.length > 0){
                     SEARCH_WORLDS_BUTTONS.forEach(button=> {
-                    const filter= new Filter(this.array, button.attributes.target.value, button.textContent, this.array);
+                    const filter= new FilterByClick(this.array, button.attributes.target.value, button.textContent, this.array);
                     });
                 }else{
                     

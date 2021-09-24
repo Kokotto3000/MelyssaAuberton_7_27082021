@@ -73,7 +73,7 @@ export default class Search{
     
         const events= new EventsManager(this.array);
         
-        const suggestions= this.display.dropDownInit(ingredientsArray, appareilsArray, ustensilesArray);
+        const suggestions= this.display.displayDropdowns(ingredientsArray, appareilsArray, ustensilesArray);
         
         events.onClickSuggestion(suggestions, results);
         events.onInputDropdowns(results, ingredientsArray, appareilsArray, ustensilesArray, this.array);

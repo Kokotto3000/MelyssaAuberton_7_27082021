@@ -30,7 +30,8 @@ export const recipes = [
         "time": 10,
         "description": "Mettre les glaçons à votre goût dans le blender, ajouter le lait, la crème de coco, le jus de 2 citrons et le sucre. Mixer jusqu'à avoir la consistence désirée",
         "appliance": "Blender",
-        "ustensils": ["cuillère à Soupe", "verres", "presse citron" ]
+        "ustensils": ["cuillère à Soupe", "verres", "presse citron" ],
+        "image": "limonade-de-coco.jpg"
     },
     {
         "id": 2,
@@ -67,7 +68,8 @@ export const recipes = [
         "time": 60,
         "description": "Découper le thon en dés, mettre dans un plat et recouvrir de jus de citron vert (mieux vaut prendre un plat large et peu profond). Laisser reposer au réfrigérateur au moins 2 heures. (Si possible faites-le le soir pour le lendemain. Après avoir laissé mariner le poisson, coupez le concombre en fines rondelles sans la peau et les tomates en prenant soin de retirer les pépins. Rayer la carotte. Ajouter les légumes au poissons avec le citron cette fois ci dans un Saladier. Ajouter le lait de coco. Pour ajouter un peu plus de saveur vous pouver ajouter 1 à 2 cuillères à soupe de Crème de coco",
         "appliance": "Saladier",
-        "ustensils": ["presse citron"]
+        "ustensils": ["presse citron"],
+        "image": "poisson-cru-a-la-tahitienne.jpg"
     },{
         "id": 3,
         "name": "Poulet coco réunionnais",
@@ -102,7 +104,8 @@ export const recipes = [
         "time": 80,
         "description": "Découper le poulet en morceaux, les faire dorer dans une cocotte avec de l'huile d'olive. Salez et poivrez. Une fois doré, laisser cuire en ajoutant de l'eau. Au bout de 30 minutes, ajouter le coulis de tomate, le lait de coco ainsi que le poivron et l'oignon découpés en morceaux. Laisser cuisiner 30 minutes de plus. Servir avec du riz",
         "appliance": "Cocotte",
-        "ustensils": ["couteau"]
+        "ustensils": ["couteau"],
+        "image": "poulet-coco-reunionnais.jpg"
     },{
         "id": 4,
         "name": "Salade de riz",
@@ -139,7 +142,8 @@ export const recipes = [
         "time": 50,
         "description": "Faire cuire le riz. Une fois le riz cuit, le laisser refroidir. Couper les oeufs dur en quarts ou en lamelle au choix, coupez le tomates en dés, ajouter au riz les oeufs, les tomates, le poisson, le maïs et la vinaigrette. Ajouter au gout de chacun des corniches, olives etc..",
         "appliance": "Cuiseur de riz",
-        "ustensils": ["saladier", "passoire"]
+        "ustensils": ["saladier", "passoire"],
+        "image": "salade-de-riz.jpg"
     },
     {
         "id": 5,
@@ -178,7 +182,8 @@ export const recipes = [
         "time": 45,
         "description": "Etaler la pâte feuilleté aux dimensions du moule, étaler la moutarde sur la pâte feuilleté, ajouter le thon. Découper les tomates en rondelles et les poser sur le poisson, ajouter un peu de crème fraiche sur toute la tarte et recouvrez de gruyère râpé. Cuire au four 30 minutes",
         "appliance":"Four",
-        "ustensils": ["moule à tarte", "râpe à fromage", "couteau"]
+        "ustensils": ["moule à tarte", "râpe à fromage", "couteau"],
+        "image": "tarte-au-thon.jpg"
     },
     {
         "id": 6,
@@ -217,7 +222,8 @@ export const recipes = [
         "time": 50,
         "description": "Commencez par mélanger les oeufs le sucre et le sucre vanillé dans un saladier, découper les pommes en tranches, ajouter la crème fraiche aux oeufs. Une fois que tout est pret, étalez la tarte dans le moule. N'oubliez pas de piquer le fond avec une fourchette avant depositionner les pommes sur la tarte. Finallement verser la préparation à base d'oeufs et de crême fraiche. Laisser cuire au four pendant 30 minutes",
         "appliance": "Four",
-        "ustensils": ["moule à tarte", "saladier", "fourchette"]
+        "ustensils": ["moule à tarte", "saladier", "fourchette"],
+        "image": "tarte-aux-pommes.jpg"
     },{
         "id": 7,
         "name": "Tartelettes au chocolat et aux fraises",
@@ -250,7 +256,8 @@ export const recipes = [
         "time": 50,
         "description": "Etaler la pate dans les moules à tartelette. Faire cuire la pate 30 minutes. Découper le chocolat en morceau et le faire chauffer, y ajouter la crême liquide, ajouter le beurre et remuer jusqu'à avoir une pâte homogène. Verser la pate sur les tartelettes. Couper les fraises en 2 et les positionner sur ",
         "appliance":"Four",
-        "ustensils":["moule à tartelettes (6)", "casserolle"]
+        "ustensils":["moule à tartelettes (6)", "casserolle"],
+        "image": "tartelettes-chocolat-fraise.jpg"
     }, {
         "id": 8,
         "name": "Brownie",
@@ -290,7 +297,8 @@ export const recipes = [
         "time": 60,
         "description": "Hachez les noix grossièrement. Faire fondre le chocolat avec le beurre. Mélanger les oeuf et le sucre et mélanger au chocolat. Ajouter la farine. Mélanger afin d'avoir quelque chose d'homogène puis incorporer les noix. Verser la préparation dans un moule de préférence rectangulaire. Cuire 2O à 25 minutes à 180°. Sortez du four et attendez quelques minutes pour démouler. Servir avec une boule de glace pour plus de gourmandise.",
         "appliance": "Four",
-        "ustensils": ["moule à gateaux", "casserolle"]
+        "ustensils": ["moule à gateaux", "casserolle"],
+        "image": "brownie.jpg"
     },
     {
         "id": 9,
@@ -322,7 +330,8 @@ export const recipes = [
         "time": 15,
         "description":"Peler le concombre le couper 2, retirer les pépins. Couper les olives en morceaux, ainsi que le fromage de chèvre. Ajouter le basilic ainsi que le vinaigre balsamic et l'huile d'olives à votre gout.",
         "appliance":"Saladier",
-        "ustensils":["cuillère en bois", "couteau"]
+        "ustensils":["cuillère en bois", "couteau"],
+        "image": "salade-mediterraneenne-chevre.jpg"
     },
     {
         "id": 10,
@@ -357,7 +366,8 @@ export const recipes = [
         "time": 60,
         "description": "Commencer par cuire les pommes de terre dans l'eau bouillante. Puis epluchez les et coupez les en rondelles. Emincer les oignons puis les faire dorer dans du beurre. Ajouter le jambon fumé coupé en en morceaux ainsi que les pommes de terres. Salez, poivrez à votre gout ( et celui de vos convives ) Laissez cuisiner durant environ 10 minutes puis ajouter le vin blanc. Après 5 minutes, mettre le tout dans un plat à gratin. Coupez le rebelochon, soit en tranches, soit le couper en 2 dans le sens de l'épaisseur et recouvrir les pommes de terre. Cuire au four (environ 220°) durant 25 minutes. C'est prêt !",
         "appliance":"Four",
-        "ustensils": ["plat à gratin", "couteau","Économe"]
+        "ustensils": ["plat à gratin", "couteau","Économe"],
+        "image": "tartiflette.jpg"
     },{
         "id": 11,
         "name": "Salade tomate, mozzarella et pommes",

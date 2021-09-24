@@ -7,7 +7,7 @@ export default class Display{
         this.recipeCards= RECIPE_CARDS;
     }
 
-    dropDownInit(ingredients, appareils, ustensiles){
+    displayDropdowns(ingredients, appareils, ustensiles){
         INGREDIENTS_SUGGESTIONS.forEach(suggestion=> {
             suggestion.innerHTML= ingredients.map(ingredient => `<li class="suggestion primary" target="ingredient" cliquable="true"><button class="dropdown-item" type="button">${ingredient}</button></li>`).join("");
         });
@@ -54,7 +54,8 @@ export default class Display{
         }else RECIPE_CARDS.innerHTML= "";        
     }
 
-    displaySearchWorlds(world, type, target){
+    displayTags(world, type, target){
+        
         SEARCH_WORLDS.innerHTML += `<button type="button" class="btn btn-${type}" target="${target}">${world}<span><i class="far fa-times-circle"></i></span></button>`;  
         
     }
