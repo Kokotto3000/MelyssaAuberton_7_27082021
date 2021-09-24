@@ -434,7 +434,8 @@ export const recipes = [
         "time": 40,
         "description": "Éplucher les fruits et les couper en morceaux, les mettre dans une casserolle en ajoutant l'eau et le sucre vanillé. Laisser cuire 15 minutes en remuant régulièrement.",
         "appliance": "Casserole",
-        "ustensils": ["couteau", "économe"]
+        "ustensils": ["couteau", "économe"],
+        "image" : "compote-pomme-rhubarbe.jpg"
     },
     {
         "id": 13,
@@ -470,7 +471,8 @@ export const recipes = [
         "time":40,
         "description":"Cuire les pommes de terre environ 30 minutes. Découper les échalottes finement. Durant la cuisson des pommes de terre. Préparez la vinaigrette avec l'huile d'olive et le vinaigre de cidre. Salez poivrez à discrétion. Dans un saladier, mettre le mâche. Ajouter",
         "appliance": "Casserole",
-        "ustensils":["couteau","saladier","cuillère en bois"]
+        "ustensils":["couteau","saladier","cuillère en bois"],
+        "image" : "salade-mache-patates.jpg"
     },
     {
         "id": 14,
@@ -510,7 +512,8 @@ export const recipes = [
         "time": 100,
         "description":"Mélanger la farine et les oeufs, faire fondre 25 grammes de beurre et ajouter à la pâte. Ajouter du sel. Laisser reposer 1 heure. Faire les galettes et laisser refroidire. Faire chauffer les saucisses avec du beurre et l'oignon. Enrouler les saucisses dans les crêpes avec une partie du fromage. Mettre le reste du fromage à raclette par dessus les crêpes. Passer four pendant 20 minutes",
         "appliance": "Four",
-        "ustensils":["poelle à frire","couteau"]
+        "ustensils":["poelle à frire","couteau"],
+        "image" : "galette-bretonne-saucisse.jpg"
     },
     {
         "id": 15,
@@ -549,7 +552,8 @@ export const recipes = [
         "time": 60,
         "description":"Mélangez dans un saladier, la farine, les oeufs, et le lait. Battez jusqu'à avoir une masse homogène. Pendant ce temps faites fondre le beurre et ajoutez en une partie à la pâte à crêpes. Faire fondre le chocolat ( avec le reste du beurre salé ). Lorsque vous chauffez les crêpes. Ajouter le chocolat fondu et les bananes coupées en rondelles. Ajoutez une touche de chantilly pour les gourmands",
         "appliance": "Poële à crêpe",
-        "ustensils":["saladier", "louche", "cuillère en bois"]
+        "ustensils":["saladier", "louche", "cuillère en bois"],
+        "image" : "crepe-chocolat-banane.jpg"
     },
     {
         "id": 16,
@@ -585,7 +589,8 @@ export const recipes = [
         "time": 45,
         "description":"Faire cuire les pâtes si vous n'avez pas de pennes des coquillettes peuvent faire l'affaire. Découper les tomates en petits morceaux, soit en tranches soit en dés. Coupez le basilic en petites morceaux et mélangez le aux tomates.  Coupez la mozzarella en tranche. Préchauffez le four à 200°. Alternez entre couches de pattes et couches de tomates, terminez par une couche de pates et recouvrir du fromage. Laisser au four 30 minutes et régalez vous ! Une recette simple qui fera plaisir au petits comme aux grands.",
         "appliance": "Four",
-        "ustensils":["plat à gratin", "couteau", "râpe à fromage"]
+        "ustensils":["plat à gratin", "couteau", "râpe à fromage"],
+        "image" : "gratin-pates-tomate-mozza.jpg"
     },
     {
         "id": 17,
@@ -617,7 +622,8 @@ export const recipes = [
         "time": 15,
         "description":"Coupez les fraises en morceaux, découpez la chaire de la pastèque en retirant les pépins. Mettre le tout dans le blender. Ajouter un cuillière à soupe de juste de citron ainsi que les glaçons. Ajoutez quelques fueilles de menthe pour plus de fraicheur. Mixez le tout. Servir et déguster.",
         "appliance": "Blender",
-        "ustensils":["verres", "couteau", "presse citron"]
+        "ustensils":["verres", "couteau", "presse citron"],
+        "image" : "smoothie-fraises.jpg"
     },
     {
         "id": 18,
@@ -642,7 +648,8 @@ export const recipes = [
         "time": 10,
         "description":"Séparez 1/5ème d'Ananas ( une belle tranche qui servira pour la décoration des verres ), mettre le reste coupé en cubes au blender, ajouter la glace à la vanille et le lait. Mixez. Servir et décorer avec l'ananas restant. C'est prêt",
         "appliance": "Blender",
-        "ustensils":["verres", "couteau"]
+        "ustensils":["verres", "couteau"],
+        "image" : "smoothie-ananas-vanille.jpg"
     },
     {
         "id": 19,
@@ -675,7 +682,8 @@ export const recipes = [
         "time": 0,
         "description":"Coupez les fruits en morceaux, ajouter le jus de citron et le lait ainsi que le sucre glace. Mixez. Ajoutez des glaçons si le lait n'a pas été mis au frais.",
         "appliance": "Blender",
-        "ustensils":["couteau", "verres", "presse citron"]
+        "ustensils":["couteau", "verres", "presse citron"],
+        "image" : "shake-banane-kiwi.jpg"
     },
     {
         "id": 20,
@@ -711,7 +719,8 @@ export const recipes = [
         "time": 30,
         "description":"Faire cuire les pates comme indiqué sur le paquet. Dorer les lardons dans une sauteuse avec l'huile d'olive. Ajouter la crême fraiche et baisser le feu au minimum. Quand les Tagliatelles sont prêtes les mettre dans la sauteuse et bien mélanger le tout en ajoutant le jaune d'oeuf. Servir et ajouter le parmesan râpé.",
         "appliance": "Sauteuse",
-        "ustensils":["râpe à fromage", "cuillère en bois"]
+        "ustensils":["râpe à fromage", "cuillère en bois"],
+        "image" : "pates-carbonara.jpg"
     },
     {
         "id": 21,

@@ -1,5 +1,6 @@
 import { recipes } from "../data/recipes.js";
 
+//classe créée dans le but de normaliser le tableau des datas pour accélérer les recherches une fois le site chargé la première fois
 export default class Arrays{
     constructor(){
         this.recipes= recipes;

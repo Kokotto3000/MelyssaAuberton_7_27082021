@@ -1,28 +1,31 @@
 import { RECIPE_CARDS, INGREDIENTS_SUGGESTIONS, APPAREILS_SUGGESTIONS, USTENSILES_SUGGESTIONS, SEARCH_WORLDS } from "./globals.js";
 import { recipes } from "../data/recipes.js";
 
+// classe qui gère les affichages
 export default class Display{
     constructor(){
         this.recipes= recipes;
         this.recipeCards= RECIPE_CARDS;
     }
 
+    //méthode pour l'affichage du contenu des dropdowns
     displayDropdowns(ingredients, appareils, ustensiles){
         INGREDIENTS_SUGGESTIONS.forEach(suggestion=> {
-            suggestion.innerHTML= ingredients.map(ingredient => `<li class="suggestion primary" target="ingredient" cliquable="true"><button class="dropdown-item" type="button">${ingredient}</button></li>`).join("");
+            suggestion.innerHTML= ingredients.map(ingredient => `<li class="suggestion primary" target="ingredients" cliquable="true"><button class="dropdown-item" type="button">${ingredient}</button></li>`).join("");
         });
 
         APPAREILS_SUGGESTIONS.forEach(suggestion=> {
-            suggestion.innerHTML= appareils.map(appareil => `<li class="suggestion success" target="appareil" cliquable="true"><button class="dropdown-item" type="button">${appareil}</button></li>`).join("");
+            suggestion.innerHTML= appareils.map(appareil => `<li class="suggestion success" target="appareils" cliquable="true"><button class="dropdown-item" type="button">${appareil}</button></li>`).join("");
         });
 
         USTENSILES_SUGGESTIONS.forEach(suggestion=> {
-            suggestion.innerHTML= ustensiles.map(ustensile => `<li class="suggestion danger" target="ustensile" cliquable="true"><button class="dropdown-item" type="button">${ustensile}</button></li>`).join("");
+            suggestion.innerHTML= ustensiles.map(ustensile => `<li class="suggestion danger" target="ustensiles" cliquable="true"><button class="dropdown-item" type="button">${ustensile}</button></li>`).join("");
         });
         const DROPDOWN_BUTTONS= document.querySelectorAll(".suggestion");
         return DROPDOWN_BUTTONS;
     }
 
+    //méthode pour l'affichage des recettes
     //template des recettes à afficher avec les données envoyées par search
     displayRecipes(recipe){
         
@@ -54,6 +57,7 @@ export default class Display{
         }else RECIPE_CARDS.innerHTML= "";        
     }
 
+    //méthode pour l'afficahge des tags
     displayTags(world, type, target){
         
         SEARCH_WORLDS.innerHTML += `<button type="button" class="btn btn-${type}" target="${target}">${world}<span><i class="far fa-times-circle"></i></span></button>`;  

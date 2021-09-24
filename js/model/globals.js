@@ -1,3 +1,5 @@
+//fichier contenant les variables globales au projet, notamment les éléments du DOM à récupérer pour leur utilisation commune dans les différentes classes
+
 export const NAV_SEARCH= document.getElementById("nav-search");
 export const INGREDIENTS_SUGGESTIONS= document.querySelectorAll(".ingredients-suggestions");
 export const APPAREILS_SUGGESTIONS= document.querySelectorAll(".appareils-suggestions");
