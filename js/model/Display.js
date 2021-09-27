@@ -34,7 +34,7 @@ export default class Display{
             RECIPE_CARDS.innerHTML+= 
                 `<div class="col">
                     <div class="card h-100">
-                        <img src="https://picsum.photos/400/200" class="card-img-top bg-secondary" alt="#" width="400" height="200" />
+                        <img src="./img/photos/${recipe.image}" class="card-img-top bg-secondary" alt="#" width="400" height="200" />
                         <div class="card-body row bg-light">
                             <div class="col-md">
                                 <h2 class="card-title">${recipe.name}</h2>

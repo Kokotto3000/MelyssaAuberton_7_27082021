@@ -269,3 +269,8 @@ a img{
 #dropdown-buttons .row{
     --bs-gutter-x: 0;
 }
+
+.card-img-top{
+    object-fit: cover;
+    overflow: hidden;
+}

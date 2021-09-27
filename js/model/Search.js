@@ -97,14 +97,14 @@ export default class Search{
                             this.display.displayRecipes(this.recipes[recipeIndex]); 
                             // break;
                         }else{
-                            
+                                                
                             for(const ingredient of recipe.ingredients){
                                 if(ingredient.includes(value)){
                                     // console.log(recipe)
                                     results.push(recipe);
                                     const recipeIndex= this.array.indexOf(recipe);                    
                                     this.display.displayRecipes(this.recipes[recipeIndex]);
-                                    // break;
+                                    break;
                                 }
                             }
                         }

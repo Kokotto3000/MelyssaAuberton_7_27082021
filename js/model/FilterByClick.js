@@ -14,7 +14,7 @@ export default class FilterByClick{
         //la classe d'affichage
         this.display= new Display();
 
-        //appelle automatqiuement la méthode de tri
+        //appelle automatiquement la méthode de tri
         this.filter(target, suggestion);
     }
 
