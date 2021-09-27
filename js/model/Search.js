@@ -140,27 +140,30 @@ export default class Search{
             for(const ingredient of result.ingredients){
                 //ajoute tous les ingrédients dans un tableau
                 ingredientsArray.push(ingredient);
-                //retire tous les doublons du tableau et retourne le tableau "filtré"
-                ingredientsArray= Array.from(new Set(ingredientsArray));
+                
             }
             
         }
+        //retire tous les doublons du tableau et retourne le tableau "filtré"
+        ingredientsArray= Array.from(new Set(ingredientsArray));
 
         //même méthode pour les appareils
         let appareilsArray= [];
         for(const result of results){
             appareilsArray.push(result.appareils);
-            appareilsArray= Array.from(new Set(appareilsArray));
+           
         }
+        appareilsArray= Array.from(new Set(appareilsArray));
 
         //et pour les ustensiles
         let ustensilesArray= [];
         for(const result of results){
             for(const ustensile of result.ustensiles){
                 ustensilesArray.push(ustensile);
-                ustensilesArray= Array.from(new Set(ustensilesArray));
+                
             }    
         }
+        ustensilesArray= Array.from(new Set(ustensilesArray));
     
         //on instancie eventsManager pour pouvoir appeler la méthode sur les clics des suggestions créées et les inputs des dropdowns
         const events= new EventsManager(this.array);
