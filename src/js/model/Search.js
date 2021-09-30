@@ -115,7 +115,7 @@ export default class Search{
             //s'il n'y a aucun résultats, on affiche un message
             // à mettre dans display...
             if(results.length <= 0){
-                RECIPE_CARDS.innerHTML= `<p>Aucune recette ne correspond à votre critère. Vous pouvez chercher "tarte aux pommes", "poisson", etc...</p>`;
+                this.display.displayErrorMessage();
             }else{
                 //sinon on lance la recherche qui crée les listes de suggestions dans les dropdowns avec ce tableau de résultats
                 this.dropdownResearch(results);

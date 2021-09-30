@@ -6474,7 +6474,8 @@ const recipes = [
         "time": 60,
         "description":"Découper en cubes les carottes et pommes de terre. Faire revenir dans du beurre. Ajouter les lardons, une fois les lardons dorés, ajouter un grand verre d'eau. Ajouter les petit poids et les haricots verts ( tous deux pré cuits ). Ajouter Sel, poivre, thyms et laurier",
         "appliance": "Poële",
-        "ustensils":["Couteau", "économe"]
+        "ustensils":["Couteau", "économe"],
+        "image": "jardiniere-de-legumes.jpg"
     },
     {
         "id": 32,
@@ -6515,7 +6516,8 @@ const recipes = [
         "time": 20,
         "description":"Beurrer les tranches de pain, ajouter entre 2 tranches de pain de mie 1 tranche d'émental, une de blanc de dinde, et une autre d'emmental. Dans un récipient, mélanger le gruyère rappé avec le lait et la noix de muscade. Mettre sur les croque monsieux. Placer au four durnat 10 minutes.",
         "appliance": "Four",
-        "ustensils":["râpe à fromage", "cuillère à Soupe", "couteau"]
+        "ustensils":["râpe à fromage", "cuillère à Soupe", "couteau"],
+        "image": "croque-monsieur-dinde.jpg"
     },
     {
         "id": 33,
@@ -6550,7 +6552,8 @@ const recipes = [
         "time": 5,
         "description":"Mélanger le fromage blanc avec le citron. Ajouter un peu de sel et poivre à votre gout. Faire dorer le pain de mie. Puis étaler le mélange. Ajouter une feuille de salade puis le saumon fumé. C'est prêt.",
         "appliance": "Four",
-        "ustensils":["couteau", "cuillère en bois"]
+        "ustensils":["couteau", "cuillère en bois"],
+        "image": "sandwich-au-saumon-fume.jpg"
     },
     {
         "id": 34,
@@ -6578,7 +6581,8 @@ const recipes = [
         "time": 25,
         "description":"Eplucher les patates douces et coupez les en morceaux. Les faire cuire durant 20 minute dans une casserolle d'eau bouillante. Passer au mixer en ajoutant la crème et l'huile d'olive à son gout. Salez, poivrez. Pressez l'orange et ajouter le jus à l'ensemble. Servir.",
         "appliance": "Mixer",
-        "ustensils":["couteau", "économe", "cuillère en bois"]
+        "ustensils":["couteau", "économe", "cuillère en bois"],
+        "image": "puree-de-patate-douce.jpg"
     },
     {
         "id": 35,
@@ -6617,7 +6621,8 @@ const recipes = [
         "time": 25,
         "description":"Éplucher les légumes, les couper en morceaux et les mettre à cuire dans une cocotte minute environ 15 minutes. Mixer en ajoutant le beurre, la crème. Ajouter le cumun et la noix de muscade.",
         "appliance": "Mixer",
-        "ustensils":["cocotte minute", "couteau", "cuillère en bois"]
+        "ustensils":["cocotte minute", "couteau", "cuillère en bois"],
+        "image": "puree-de-carottes.jpg"
     },
     {
         "id": 36,
@@ -6656,7 +6661,8 @@ const recipes = [
         "time": 35,
         "description":"Raper les courgette et les faire revenir durant 15 minutes. Ajouter les fromages de chèvre frais. Préparer la béchamelle avec le lait et la maizena. Salez poivrez, ajouter de la noix de muscade selon les gouts. Dans un plat, mettre un peu de sauces au fond, puis des lasagnes, puis des courgettes etc... terminer par de la sauces et ajouter le gruiyère. Passer au four à 180° durant 20 à 25 minutes.",
         "appliance": "Four",
-        "ustensils":["plat à gratin", "râpe à fromage", "fouet"]
+        "ustensils":["plat à gratin", "râpe à fromage", "fouet"],
+        "image": "lasagnes-courgette-chevre.jpg"
     },
     {
         "id": 37,
@@ -6696,7 +6702,8 @@ const recipes = [
         "time": 60,
         "description":"Couper les courgettes dans le sens de la longueur. Vider les courgette dans un saladier. Réserver.Faire revenir la chair des courgettes dans 25cl d'huile d'olive. Ajouter l'oignon puis la viande hachée. Mettre la farce dans les courgettes. Ajouter le coulis de tomates. Mettre au four pendant 30 minutes. Avant la fin de la cuisson ajouter le fromage rapé",
         "appliance": "Four",
-        "ustensils":["couteau", "cuillère en bois", "Poelle à frire"]
+        "ustensils":["couteau", "cuillère en bois", "Poelle à frire"],
+        "image": "courgette-farcie-boeuf.jpg"
     },
     {
         "id": 38,
@@ -6726,7 +6733,8 @@ const recipes = [
         "time": 20,
         "description":"Fouettez les oeufs, le sucre et le lait. tremper les tranches de pain. Le cuire au four pendant environ 10 minutes à 180°. Servir",
         "appliance": "Four",
-        "ustensils":["fouet", "bol","Cuillère à Soupe"]
+        "ustensils":["fouet", "bol","Cuillère à Soupe"],
+        "image": "pain-perdu.jpg"
     },
     {
         "id": 39,
@@ -6756,7 +6764,8 @@ const recipes = [
         "time": 40,
         "description":"Découper les pommes en dé. Mélanger dans un saladier la farine, le sucre et le beurre. Bien mélanger. Beurrer le moule et ajouter les pommes. Par dessus placez la pate que vous avez obtenu. Cuire 20 minutes au four",
         "appliance": "Four",
-        "ustensils":["saladier", "couteau","fouet"]
+        "ustensils":["saladier", "couteau","fouet"],
+        "image": "crumble-aux-pommes.jpg"
     },
     {
         "id": 40,
@@ -6786,7 +6795,8 @@ const recipes = [
         "time": 10,
         "description":"Dans un saladier mettre l'eau, le jus des cirtons et le sucre. Bien mélanger. Ajouter le bicarbonate. Servir. Ajouter des glaçon et une feuille de menthe pour la déco.",
         "appliance": "Saladier",
-        "ustensils":["cuillère en bois"]
+        "ustensils":["cuillère en bois"],
+        "image": "limonade.jpg"
     },
     {
         "id": 41,
@@ -6811,7 +6821,8 @@ const recipes = [
         "time": 20,
         "description":"Séparer les blancs d'oeufs. Faire fondre le chocolat au bain marie. Ajouter les jaunes et le sucre au chocolat hors du feu. Battre les blancs en neige. Ajouter les blancs au mélange de chocolat. Mélangez délicatement avec une spatule. Servir dans un plat ou dans des verres. Mettre au frais",
         "appliance": "Casserolle",
-        "ustensils":["fouet", "spatule", "verres"]
+        "ustensils":["fouet", "spatule", "verres"],
+        "image": "mousse-au-chocolat.jpg"
     }, 
     {
         "id": 42,
@@ -6840,7 +6851,8 @@ const recipes = [
         "time": 60,
         "description":"Commencez par préparer la mousse au chocolat au moins 2 heures avant. Quand la mousse est prête et a reposée. Alors mouiller les boudoirs dans le jus des poires. Disposer. Alterner : mousse au chocolat, boudoirs et poires. Mettre au frais.",
         "appliance": "Moule à charlotte",
-        "ustensils":["saladier", "couteau", "fouet"]
+        "ustensils":["saladier", "couteau", "fouet"],
+        "image": "charlotte-aux-poires.jpg"
     },
     {
         "id": 43,
@@ -6873,7 +6885,8 @@ const recipes = [
         "time": 50,
         "description":"Préchauffez le fours à 200°. Etaler la pate. La mettre dans un moule. Battre les oeufs avec le sucre. Ajouter le jus de citron et le beurre. Verser le tout sur la pate. Au four 30 minutes. Bon appetit ",
         "appliance": "Four",
-        "ustensils":["rouleau à patisserie", "moule à tarte", "presse citron"]
+        "ustensils":["rouleau à patisserie", "moule à tarte", "presse citron"],
+        "image": "tarte-au-citron.jpg"
     }, 
     {
         "id": 44,
@@ -6909,7 +6922,8 @@ const recipes = [
         "time": 15,
         "description":"Mélanger la farine et le beurre fondu en ajoutant le lait peu à peu. Ajouter du sucre après la cuisson. Bien mélanger. Ajouter le chocolat en morceaux et laisser chauffer 8 minutes en mélangeant avec une cuillère en bois. Mettre dans des verres",
         "appliance": "Casserolle",
-        "ustensils":["cuillère en bois"]
+        "ustensils":["cuillère en bois"],
+        "image": "creme-dessert-au-chocolat.jpg"
     },
     {
         "id": 45,
@@ -6939,7 +6953,8 @@ const recipes = [
         "time": 30,
         "description":"Faire bouillir le lait ( on peut y ajouter de l'essence de vanille. Battre les oeufs et le sucre, ajouter la farine puis finalement ajouter le lait chaud. Remettre à feu doux pour faire épaissir en remuant pendant 5 à 10 minutes.",
         "appliance": "Casserolle",
-        "ustensils":["fouet","saladier"]
+        "ustensils":["fouet","saladier"],
+        "image": "creme-patissiere.jpg"
     },
     {
         "id": 46,
@@ -6979,7 +6994,8 @@ const recipes = [
         "time": 60,
         "description":"Mélanger la farine avec le sucre et les oeufs en ajoutant du sucre vanillé. Ajouter le lait petit à petit. Ajouter un petit vers de rhum. Verser la masse dans un plat beurré y placer les pruneaux et faire cuire à 200° pendant 45 minutes",
         "appliance": "Four",
-        "ustensils":["fouet", "moule", "verres"]
+        "ustensils":["fouet", "moule", "verres"],
+        "image": "far-breton.jpg"
     },
     {
         "id": 47,
@@ -7010,7 +7026,8 @@ const recipes = [
         "time": 5,
         "description":"Mélanger le jus de citron avec le sucre et la mascarpone. Ajouter la crème fraiche. Mélanger le tout et mettre au congélateur pendant 1 heure. Servir",
         "appliance": "Saladier",
-        "ustensils":["fouet", "verres", "cuillère en bois"]
+        "ustensils":["fouet", "verres", "cuillère en bois"],
+        "image": "mousse-au-citron.jpg"
     },
     {
         "id": 48,
@@ -7045,7 +7062,8 @@ const recipes = [
         "time": 40,
         "description":"Étaler la pate a pizza. Ecraser les tomates pelées, les étaler sur la pâte, ajouter les lardons et les champignons. Ajouter le gruyère eet passer au four à 220° durant 20 minutes",
         "appliance": "Four",
-        "ustensils":["rouleau à patisserie", "râpe à fromage","couteau"]
+        "ustensils":["rouleau à patisserie", "râpe à fromage","couteau"],
+        "image": "pizza.jpg"
     },
     {
         "id": 49,
@@ -7078,7 +7096,8 @@ const recipes = [
         "time": 0,
         "description":"Découper les fruits. Le passer au blender jusqu'à obtenir une texture liquide. Mettre au frais. Servir",
         "appliance": "Blender",
-        "ustensils":["couteau", "verres"]
+        "ustensils":["couteau", "verres"],
+        "image": "smoothie-tropical.jpg"
     },
     {
         "id": 50,
@@ -7113,7 +7132,8 @@ const recipes = [
         "time": 60,
         "description":"Préparer la frangipane : Mélanger le sucre la poudre d'amander, le beurre et les oeufs. Etaler la moitier de la pate feuilleté et mettre dans un moule à tarte. Garnir de frangipane et recouvrir du reste de pate feuilletée. Mettre au four 30 minutes",
         "appliance": "Four",
-        "ustensils":["rouleau à patisserie","fouet"]
+        "ustensils":["rouleau à patisserie","fouet"],
+        "image": "frangipane.jpg"
     }
 ]
 
@@ -7226,10 +7246,7 @@ class Display{
                             </div>
 
                             <div class="col-md">
-                                <h3 class="text-end d-flex justify-content-end align-items-center"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clock me-1" viewBox="0 0 16 16">
-                                    <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
-                                    <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/>
-                                </svg>${recipe.time} min</h3>
+                                <h3 class="text-end d-flex justify-content-end align-items-center"><i class="far fa-clock"></i>${recipe.time} min</h3>
                                 <p class="card-text">${recipe.description}</p>
                             </div>
                         </div>
@@ -7242,8 +7259,12 @@ class Display{
     //méthode pour l'afficahge des tags
     displayTags(world, type, target){
         
-        _globals__WEBPACK_IMPORTED_MODULE_0__.SEARCH_WORLDS.innerHTML += `<button type="button" class="btn btn-${type}" target="${target}">${world}<span><i class="far fa-times-circle"></i></span></button>`;  
+        _globals__WEBPACK_IMPORTED_MODULE_0__.SEARCH_WORLDS.innerHTML += `<button type="button" class="btn btn-${type} me-2 tag" target="${target}">${world}<span><i class="far fa-times-circle"></i></span></button>`;  
         
+    }
+
+    displayErrorMessage(){
+        _globals__WEBPACK_IMPORTED_MODULE_0__.RECIPE_CARDS.innerHTML= `<div class="error-message p-5"><h2>Aucune recette ne correspond à votre critère...</h2><p>Vous pouvez chercher "tarte aux pommes", "poisson", etc...</p><img class="img-fluid" src="../assets/hungry.png" alt="logo d'un personnage qui a faim" /></div>`;
     }
 }
 
@@ -7279,6 +7300,7 @@ class EventsManager{
         this.display= new _Display__WEBPACK_IMPORTED_MODULE_2__["default"]();
         this.navigationInput= _globals__WEBPACK_IMPORTED_MODULE_0__.NAV_SEARCH;
         this.dropdownInputs= _globals__WEBPACK_IMPORTED_MODULE_0__.DROPDOWN_INPUTS;
+        this.dropdownButtons= document.querySelectorAll(".btn-lg");
         //le tableau de résultats envoyé à l'application à son instanciation
         this.array= array;        
     }
@@ -7291,6 +7313,34 @@ class EventsManager{
         this.navigationInput.addEventListener('input', ()=>{
             search.navigationResearch(this.navigationInput.value.trim().toLowerCase());
         });
+
+        //ajout d'eventListeners pour changer le placeholder des inputs dans les dropdowns
+        //ici pour changer le placeholder au click
+        this.dropdownButtons.forEach(button=> button.addEventListener("click", (e)=>{
+            //évite la propagation de l'event sur le document aux boutons
+            e.stopPropagation();
+            if(button.classList.contains("show")){
+                const input= button.querySelector("input");
+                if(input.attributes.target.value === "ingredients") input.setAttribute("placeholder", "Rechercher un ingrédient");
+                else if(input.attributes.target.value === "appareils") input.setAttribute("placeholder", "Rechercher un appareil");
+                else input.setAttribute("placeholder", "Rechercher un ustensile");
+            }else{
+                const input= button.querySelector("input");
+                if(input.attributes.target.value === "ingredients") input.setAttribute("placeholder", "Ingrédients");
+                else if(input.attributes.target.value === "appareils") input.setAttribute("placeholder", "Appareils");
+                else input.setAttribute("placeholder", "Ustensiles");                    
+            }
+        }));
+
+        //ici pour changer le placeholder au click à côté du bouton
+        document.addEventListener("click", ()=> {            
+            this.dropdownInputs.forEach(input=> {
+                if(input.attributes.target.value === "ingredients") input.setAttribute("placeholder", "Ingrédients");
+                else if(input.attributes.target.value === "appareils") input.setAttribute("placeholder", "Appareil");
+                else input.setAttribute("placeholder", "Ustensiles");
+            })
+        })
+
     }
 
     //methode pour les events sur les listes des dropdowns
@@ -7637,7 +7687,7 @@ class Search{
             //s'il n'y a aucun résultats, on affiche un message
             // à mettre dans display...
             if(results.length <= 0){
-                _globals__WEBPACK_IMPORTED_MODULE_3__.RECIPE_CARDS.innerHTML= `<p>Aucune recette ne correspond à votre critère. Vous pouvez chercher "tarte aux pommes", "poisson", etc...</p>`;
+                this.display.displayErrorMessage();
             }else{
                 //sinon on lance la recherche qui crée les listes de suggestions dans les dropdowns avec ce tableau de résultats
                 this.dropdownResearch(results);

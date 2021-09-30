@@ -1,0 +1,109 @@
+.dropdown-input{
+    color: white;
+    border: none;
+    text-align: left;
+    font-size: 18px;
+    font-weight: 700;
+    width: 100%;
+    &::placeholder{
+        color: white;
+        opacity: 1;
+    }
+    &:focus::placeholder, &:active::placeholder{
+        opacity: .25;
+    }
+}
+
+.dropdown-menu{
+    
+    position: static !important;
+    flex-flow: row wrap;
+    /* width: 800px; */
+    transform: none !important;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5px 10px;
+    width: 100%;
+    margin: 0;
+    &-primary{
+        background-color: var(--bs-primary);
+        border-color: var(--bs-primary);
+    }
+    &-success{
+        background-color: var(--bs-success);
+        border-color: var(--bs-success);
+    }
+    &-danger{
+        background-color: var(--bs-danger);
+        border-color: var(--bs-danger);
+    }
+    &.show{
+        position: static;
+        display: flex;        
+        left:0;
+        width: 100%;
+        z-index: 10;
+    }
+}
+
+.dropdown-item{
+    color: white;
+    // padding: .25rem 1.25rem;
+    overflow: hidden;
+    // width: 30%;
+    min-width: 175px;
+    text-transform: capitalize;
+    text-align: left;
+    align-self: stretch;
+    &:hover, &:focus{
+        color: white;
+        background-color: transparent;
+        transform: scale(1.01);
+        font-weight: 700;
+    }
+}
+
+
+
+
+/*****************test dropdown avec boostrap****************/
+
+.btn-group{
+    display: flex;
+    flex-direction: column;
+    max-width: 50%;
+    border-radius: .3rem;
+    padding: 0;
+    height: fit-content;
+    width: fit-content;
+}
+
+.btn-lg{
+    padding: 20px;
+}
+
+.btn-lg::after{
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f078";
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(-50%, -50%);
+}
+
+.btn-lg.show::after{
+    content: "\f077";
+}
+
+.container-fluid{
+    padding: 0;
+}
+
+.btn-group>.btn-group:not(:last-child)>.btn, .btn-group>.btn:not(:last-child):not(.dropdown-toggle) {
+    border-radius: .3rem;
+}
+
+#dropdown-buttons .row{
+    --bs-gutter-x: 0;
+}

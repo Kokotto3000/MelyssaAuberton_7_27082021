@@ -1,6 +1,6 @@
 
 
-// @import "./Utils/variables";
+
 // @import "./Utils/mixins";
 // Custom.scss
 // Option A: Include all of Bootstrap
@@ -10,18 +10,15 @@
 @import "../../node_modules/bootstrap/scss/bootstrap";
 
 // Then add additional custom code here
+@import "./Utils/variables";
 
-@import "./Base/reset";
-// @import "./Base/base";
-// @import "./Base/animations";
+@import "./Base/base";
+@import "./Base/animations";
 
-// @import "./Components/buttons";
-// @import "./Components/lightbox";
+@import "./Components/buttons";
+@import "./Components/cards";
+@import "./Components/dropdowns";
+@import "./Components/inputs";
 
-// @import "./Layouts/header";
-// @import "./Layouts/nav";
-// @import "./Layouts/forms";
-// @import "./Layouts/footer";
-
-// @import "./Pages/accueil";
-// @import "./Pages/photographer";
+@import "./Layouts/header";
+@import "./Layouts/nav";

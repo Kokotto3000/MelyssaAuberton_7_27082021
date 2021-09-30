@@ -44,10 +44,7 @@ export default class Display{
                             </div>
 
                             <div class="col-md">
-                                <h3 class="text-end d-flex justify-content-end align-items-center"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clock me-1" viewBox="0 0 16 16">
-                                    <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
-                                    <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/>
-                                </svg>${recipe.time} min</h3>
+                                <h3 class="text-end d-flex justify-content-end align-items-center"><i class="far fa-clock"></i>${recipe.time} min</h3>
                                 <p class="card-text">${recipe.description}</p>
                             </div>
                         </div>
@@ -60,7 +57,11 @@ export default class Display{
     //méthode pour l'afficahge des tags
     displayTags(world, type, target){
         
-        SEARCH_WORLDS.innerHTML += `<button type="button" class="btn btn-${type}" target="${target}">${world}<span><i class="far fa-times-circle"></i></span></button>`;  
+        SEARCH_WORLDS.innerHTML += `<button type="button" class="btn btn-${type} me-2 tag" target="${target}">${world}<span><i class="far fa-times-circle"></i></span></button>`;  
         
+    }
+
+    displayErrorMessage(){
+        RECIPE_CARDS.innerHTML= `<div class="error-message p-5"><h2>Aucune recette ne correspond à votre critère...</h2><p>Vous pouvez chercher "tarte aux pommes", "poisson", etc...</p><img class="img-fluid" src="../assets/hungry.png" alt="logo d'un personnage qui a faim" /></div>`;
     }
 }

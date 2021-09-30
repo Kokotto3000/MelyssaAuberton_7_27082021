@@ -16,6 +16,7 @@ export default class EventsManager{
         this.display= new Display();
         this.navigationInput= NAV_SEARCH;
         this.dropdownInputs= DROPDOWN_INPUTS;
+        this.dropdownButtons= document.querySelectorAll(".btn-lg");
         //le tableau de résultats envoyé à l'application à son instanciation
         this.array= array;        
     }
@@ -28,6 +29,34 @@ export default class EventsManager{
         this.navigationInput.addEventListener('input', ()=>{
             search.navigationResearch(this.navigationInput.value.trim().toLowerCase());
         });
+
+        //ajout d'eventListeners pour changer le placeholder des inputs dans les dropdowns
+        //ici pour changer le placeholder au click
+        this.dropdownButtons.forEach(button=> button.addEventListener("click", (e)=>{
+            //évite la propagation de l'event sur le document aux boutons
+            e.stopPropagation();
+            if(button.classList.contains("show")){
+                const input= button.querySelector("input");
+                if(input.attributes.target.value === "ingredients") input.setAttribute("placeholder", "Rechercher un ingrédient");
+                else if(input.attributes.target.value === "appareils") input.setAttribute("placeholder", "Rechercher un appareil");
+                else input.setAttribute("placeholder", "Rechercher un ustensile");
+            }else{
+                const input= button.querySelector("input");
+                if(input.attributes.target.value === "ingredients") input.setAttribute("placeholder", "Ingrédients");
+                else if(input.attributes.target.value === "appareils") input.setAttribute("placeholder", "Appareils");
+                else input.setAttribute("placeholder", "Ustensiles");                    
+            }
+        }));
+
+        //ici pour changer le placeholder au click à côté du bouton
+        document.addEventListener("click", ()=> {            
+            this.dropdownInputs.forEach(input=> {
+                if(input.attributes.target.value === "ingredients") input.setAttribute("placeholder", "Ingrédients");
+                else if(input.attributes.target.value === "appareils") input.setAttribute("placeholder", "Appareil");
+                else input.setAttribute("placeholder", "Ustensiles");
+            })
+        })
+
     }
 
     //methode pour les events sur les listes des dropdowns
