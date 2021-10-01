@@ -6738,9 +6738,13 @@ class EventsManager{
                 SEARCH_WORLDS_BUTTONS= _globals__WEBPACK_IMPORTED_MODULE_0__.SEARCH_WORLDS.querySelectorAll("button");
                 //s'il reste des tags, on lance une boucle qui filtre les résultats par tags restants
                 if(SEARCH_WORLDS_BUTTONS.length > 0){
-                    SEARCH_WORLDS_BUTTONS.forEach(button=> {
-                    const filter= new _FilterByClick__WEBPACK_IMPORTED_MODULE_3__["default"](this.array, button.attributes.target.value, button.textContent, this.array);
-                    });
+                    let results= this.array;
+
+                    for(let i=0; i < SEARCH_WORLDS_BUTTONS.length; i++){
+                        results= new _FilterByClick__WEBPACK_IMPORTED_MODULE_3__["default"](results, SEARCH_WORLDS_BUTTONS[i].attributes.target.value, SEARCH_WORLDS_BUTTONS[i].textContent, this.array);
+                        i++;
+                    }
+                    
                 }else{
                     // sinon on réinitialise la recherche de base et on efface les recettes
                     const search= new _Search__WEBPACK_IMPORTED_MODULE_1__["default"](this.array);
@@ -6772,6 +6776,7 @@ __webpack_require__.r(__webpack_exports__);
 //classe qui va filtrer les résultats en fonction du clic sur les suggestions des dropdowns
 class FilterByClick{
     constructor(results, target, suggestion, array){
+        
         //le tableau des résultats de recherche envoyé à l'instanciation de la classe
         this.results= results;
         
@@ -6814,6 +6819,8 @@ class FilterByClick{
             //affiche dès qu'une recette est trouvée dans les résultats filtrés
             this.display.displayRecipes(result.recipe);
         }
+        
+        return filteredResults;
     }
 }
 

@@ -119,9 +119,13 @@ export default class EventsManager{
                 SEARCH_WORLDS_BUTTONS= SEARCH_WORLDS.querySelectorAll("button");
                 //s'il reste des tags, on lance une boucle qui filtre les résultats par tags restants
                 if(SEARCH_WORLDS_BUTTONS.length > 0){
-                    SEARCH_WORLDS_BUTTONS.forEach(button=> {
-                    const filter= new FilterByClick(this.array, button.attributes.target.value, button.textContent, this.array);
-                    });
+                    let results= this.array;
+
+                    for(let i=0; i < SEARCH_WORLDS_BUTTONS.length; i++){
+                        results= new FilterByClick(results, SEARCH_WORLDS_BUTTONS[i].attributes.target.value, SEARCH_WORLDS_BUTTONS[i].textContent, this.array);
+                        i++;
+                    }
+                    
                 }else{
                     // sinon on réinitialise la recherche de base et on efface les recettes
                     const search= new Search(this.array);

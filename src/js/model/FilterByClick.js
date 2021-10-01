@@ -4,6 +4,7 @@ import Search from "./Search";
 //classe qui va filtrer les résultats en fonction du clic sur les suggestions des dropdowns
 export default class FilterByClick{
     constructor(results, target, suggestion, array){
+        
         //le tableau des résultats de recherche envoyé à l'instanciation de la classe
         this.results= results;
         
@@ -46,5 +47,7 @@ export default class FilterByClick{
             //affiche dès qu'une recette est trouvée dans les résultats filtrés
             this.display.displayRecipes(result.recipe);
         }
+        
+        return filteredResults;
     }
 }
