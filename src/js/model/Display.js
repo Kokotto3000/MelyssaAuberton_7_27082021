@@ -1,10 +1,15 @@
-import { RECIPE_CARDS, INGREDIENTS_SUGGESTIONS, APPAREILS_SUGGESTIONS, USTENSILES_SUGGESTIONS, SEARCH_WORLDS } from "./globals";
-import { recipes } from "../data/recipes";
+import { 
+    RECIPE_CARDS,
+    INGREDIENTS_SUGGESTIONS, 
+    APPAREILS_SUGGESTIONS, 
+    USTENSILES_SUGGESTIONS, 
+    SEARCH_WORLDS 
+} from "./globals";
 
 // classe qui gère les affichages
 export default class Display{
     constructor(){
-        this.recipes= recipes;
+        // this.recipes= recipes;
         this.recipeCards= RECIPE_CARDS;
     }
 
@@ -29,8 +34,7 @@ export default class Display{
     //template des recettes à afficher avec les données envoyées par search
     displayRecipes(recipe){
         
-        if(recipe){
-            
+        if(recipe){            
             RECIPE_CARDS.innerHTML+= 
                 `<div class="col">
                     <div class="card h-100">
@@ -50,15 +54,12 @@ export default class Display{
                         </div>
                     </div>
                 </div>`;
-            
         }else RECIPE_CARDS.innerHTML= "";        
     }
 
-    //méthode pour l'afficahge des tags
-    displayTags(world, type, target){
-        
+    //méthode pour l'affichage des tags
+    displayTags(world, type, target){        
         SEARCH_WORLDS.innerHTML += `<button type="button" class="btn btn-${type} me-2 tag" target="${target}">${world}<span><i class="far fa-times-circle"></i></span></button>`;  
-        
     }
 
     displayErrorMessage(){

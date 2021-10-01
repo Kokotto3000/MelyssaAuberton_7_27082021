@@ -405,7 +405,8 @@ export const recipes = [
         "time": 10,
         "description": "Commencer par couper les feuilles de salade, ajouter les tomates cerises et le fromage découpé en cubes ou en boules avec la cuillère à melon. Découper le jambon de parme en fines lamelles. Ajouter la pomme elle aussi découpée en petit morceaux. Assaisonnez à votre gout. ",
         "appliance": "Saladier",
-        "ustensils": ["couteau", "cuillère à melon" ]
+        "ustensils": ["couteau", "cuillère à melon" ],
+        "image": "salade-tomate-mozza.jpg"
     },{
         "id": 12,
         "name": "Compote pomme rhubarbe",

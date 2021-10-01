@@ -1,8 +1,6 @@
-import { recipes } from "../data/recipes";
-
 //classe créée dans le but de normaliser le tableau des datas pour accélérer les recherches une fois le site chargé la première fois
 export default class Arrays{
-    constructor(){
+    constructor(recipes){
         this.recipes= recipes;
     }
 
@@ -24,7 +22,8 @@ export default class Arrays{
                 "description" : recipe.description.toLowerCase(),
                 "ingredients" : ingredientsArray,
                 "appareils" : recipe.appliance.toLowerCase(),
-                "ustensiles" : recipe.ustensils
+                "ustensiles" : recipe.ustensils,
+                "recipe" : recipe
             });
         }
         

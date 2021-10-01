@@ -11344,7 +11344,9 @@ a img {
   border-radius: 0.3rem;
   padding: 0;
   height: fit-content;
+  height: -moz-fit-content;
   width: fit-content;
+  width: -moz-fit-content;
 }
 
 .btn-lg, .btn-group-lg > .btn {

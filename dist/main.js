@@ -3339,664 +3339,6 @@ function within(min, value, max) {
 
 /***/ }),
 
-/***/ "./node_modules/bootstrap/js/dist/button.js":
-/*!**************************************************!*\
-  !*** ./node_modules/bootstrap/js/dist/button.js ***!
-  \**************************************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
-
-/*!
-  * Bootstrap button.js v5.1.1 (https://getbootstrap.com/)
-  * Copyright 2011-2021 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
-  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
-  */
-(function (global, factory) {
-   true ? module.exports = factory(__webpack_require__(/*! ./dom/event-handler.js */ "./node_modules/bootstrap/js/dist/dom/event-handler.js"), __webpack_require__(/*! ./base-component.js */ "./node_modules/bootstrap/js/dist/base-component.js")) :
-  0;
-}(this, (function (EventHandler, BaseComponent) { 'use strict';
-
-  function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
-
-  var EventHandler__default = /*#__PURE__*/_interopDefaultLegacy(EventHandler);
-  var BaseComponent__default = /*#__PURE__*/_interopDefaultLegacy(BaseComponent);
-
-  /**
-   * --------------------------------------------------------------------------
-   * Bootstrap (v5.1.1): util/index.js
-   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
-   * --------------------------------------------------------------------------
-   */
-
-  const getjQuery = () => {
-    const {
-      jQuery
-    } = window;
-
-    if (jQuery && !document.body.hasAttribute('data-bs-no-jquery')) {
-      return jQuery;
-    }
-
-    return null;
-  };
-
-  const DOMContentLoadedCallbacks = [];
-
-  const onDOMContentLoaded = callback => {
-    if (document.readyState === 'loading') {
-      // add listener on the first call when the document is in loading state
-      if (!DOMContentLoadedCallbacks.length) {
-        document.addEventListener('DOMContentLoaded', () => {
-          DOMContentLoadedCallbacks.forEach(callback => callback());
-        });
-      }
-
-      DOMContentLoadedCallbacks.push(callback);
-    } else {
-      callback();
-    }
-  };
-
-  const defineJQueryPlugin = plugin => {
-    onDOMContentLoaded(() => {
-      const $ = getjQuery();
-      /* istanbul ignore if */
-
-      if ($) {
-        const name = plugin.NAME;
-        const JQUERY_NO_CONFLICT = $.fn[name];
-        $.fn[name] = plugin.jQueryInterface;
-        $.fn[name].Constructor = plugin;
-
-        $.fn[name].noConflict = () => {
-          $.fn[name] = JQUERY_NO_CONFLICT;
-          return plugin.jQueryInterface;
-        };
-      }
-    });
-  };
-
-  /**
-   * --------------------------------------------------------------------------
-   * Bootstrap (v5.1.1): button.js
-   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
-   * --------------------------------------------------------------------------
-   */
-  /**
-   * ------------------------------------------------------------------------
-   * Constants
-   * ------------------------------------------------------------------------
-   */
-
-  const NAME = 'button';
-  const DATA_KEY = 'bs.button';
-  const EVENT_KEY = `.${DATA_KEY}`;
-  const DATA_API_KEY = '.data-api';
-  const CLASS_NAME_ACTIVE = 'active';
-  const SELECTOR_DATA_TOGGLE = '[data-bs-toggle="button"]';
-  const EVENT_CLICK_DATA_API = `click${EVENT_KEY}${DATA_API_KEY}`;
-  /**
-   * ------------------------------------------------------------------------
-   * Class Definition
-   * ------------------------------------------------------------------------
-   */
-
-  class Button extends BaseComponent__default['default'] {
-    // Getters
-    static get NAME() {
-      return NAME;
-    } // Public
-
-
-    toggle() {
-      // Toggle class and sync the `aria-pressed` attribute with the return value of the `.toggle()` method
-      this._element.setAttribute('aria-pressed', this._element.classList.toggle(CLASS_NAME_ACTIVE));
-    } // Static
-
-
-    static jQueryInterface(config) {
-      return this.each(function () {
-        const data = Button.getOrCreateInstance(this);
-
-        if (config === 'toggle') {
-          data[config]();
-        }
-      });
-    }
-
-  }
-  /**
-   * ------------------------------------------------------------------------
-   * Data Api implementation
-   * ------------------------------------------------------------------------
-   */
-
-
-  EventHandler__default['default'].on(document, EVENT_CLICK_DATA_API, SELECTOR_DATA_TOGGLE, event => {
-    event.preventDefault();
-    const button = event.target.closest(SELECTOR_DATA_TOGGLE);
-    const data = Button.getOrCreateInstance(button);
-    data.toggle();
-  });
-  /**
-   * ------------------------------------------------------------------------
-   * jQuery
-   * ------------------------------------------------------------------------
-   * add .Button to jQuery only if jQuery is present
-   */
-
-  defineJQueryPlugin(Button);
-
-  return Button;
-
-})));
-//# sourceMappingURL=button.js.map
-
-
-/***/ }),
-
-/***/ "./node_modules/bootstrap/js/dist/collapse.js":
-/*!****************************************************!*\
-  !*** ./node_modules/bootstrap/js/dist/collapse.js ***!
-  \****************************************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
-
-/*!
-  * Bootstrap collapse.js v5.1.1 (https://getbootstrap.com/)
-  * Copyright 2011-2021 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
-  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
-  */
-(function (global, factory) {
-   true ? module.exports = factory(__webpack_require__(/*! ./dom/data.js */ "./node_modules/bootstrap/js/dist/dom/data.js"), __webpack_require__(/*! ./dom/event-handler.js */ "./node_modules/bootstrap/js/dist/dom/event-handler.js"), __webpack_require__(/*! ./dom/manipulator.js */ "./node_modules/bootstrap/js/dist/dom/manipulator.js"), __webpack_require__(/*! ./dom/selector-engine.js */ "./node_modules/bootstrap/js/dist/dom/selector-engine.js"), __webpack_require__(/*! ./base-component.js */ "./node_modules/bootstrap/js/dist/base-component.js")) :
-  0;
-}(this, (function (Data, EventHandler, Manipulator, SelectorEngine, BaseComponent) { 'use strict';
-
-  function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
-
-  var Data__default = /*#__PURE__*/_interopDefaultLegacy(Data);
-  var EventHandler__default = /*#__PURE__*/_interopDefaultLegacy(EventHandler);
-  var Manipulator__default = /*#__PURE__*/_interopDefaultLegacy(Manipulator);
-  var SelectorEngine__default = /*#__PURE__*/_interopDefaultLegacy(SelectorEngine);
-  var BaseComponent__default = /*#__PURE__*/_interopDefaultLegacy(BaseComponent);
-
-  /**
-   * --------------------------------------------------------------------------
-   * Bootstrap (v5.1.1): util/index.js
-   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
-   * --------------------------------------------------------------------------
-   */
-
-  const toType = obj => {
-    if (obj === null || obj === undefined) {
-      return `${obj}`;
-    }
-
-    return {}.toString.call(obj).match(/\s([a-z]+)/i)[1].toLowerCase();
-  };
-
-  const getSelector = element => {
-    let selector = element.getAttribute('data-bs-target');
-
-    if (!selector || selector === '#') {
-      let hrefAttr = element.getAttribute('href'); // The only valid content that could double as a selector are IDs or classes,
-      // so everything starting with `#` or `.`. If a "real" URL is used as the selector,
-      // `document.querySelector` will rightfully complain it is invalid.
-      // See https://github.com/twbs/bootstrap/issues/32273
-
-      if (!hrefAttr || !hrefAttr.includes('#') && !hrefAttr.startsWith('.')) {
-        return null;
-      } // Just in case some CMS puts out a full URL with the anchor appended
-
-
-      if (hrefAttr.includes('#') && !hrefAttr.startsWith('#')) {
-        hrefAttr = `#${hrefAttr.split('#')[1]}`;
-      }
-
-      selector = hrefAttr && hrefAttr !== '#' ? hrefAttr.trim() : null;
-    }
-
-    return selector;
-  };
-
-  const getSelectorFromElement = element => {
-    const selector = getSelector(element);
-
-    if (selector) {
-      return document.querySelector(selector) ? selector : null;
-    }
-
-    return null;
-  };
-
-  const getElementFromSelector = element => {
-    const selector = getSelector(element);
-    return selector ? document.querySelector(selector) : null;
-  };
-
-  const isElement = obj => {
-    if (!obj || typeof obj !== 'object') {
-      return false;
-    }
-
-    if (typeof obj.jquery !== 'undefined') {
-      obj = obj[0];
-    }
-
-    return typeof obj.nodeType !== 'undefined';
-  };
-
-  const getElement = obj => {
-    if (isElement(obj)) {
-      // it's a jQuery object or a node element
-      return obj.jquery ? obj[0] : obj;
-    }
-
-    if (typeof obj === 'string' && obj.length > 0) {
-      return document.querySelector(obj);
-    }
-
-    return null;
-  };
-
-  const typeCheckConfig = (componentName, config, configTypes) => {
-    Object.keys(configTypes).forEach(property => {
-      const expectedTypes = configTypes[property];
-      const value = config[property];
-      const valueType = value && isElement(value) ? 'element' : toType(value);
-
-      if (!new RegExp(expectedTypes).test(valueType)) {
-        throw new TypeError(`${componentName.toUpperCase()}: Option "${property}" provided type "${valueType}" but expected type "${expectedTypes}".`);
-      }
-    });
-  };
-  /**
-   * Trick to restart an element's animation
-   *
-   * @param {HTMLElement} element
-   * @return void
-   *
-   * @see https://www.charistheo.io/blog/2021/02/restart-a-css-animation-with-javascript/#restarting-a-css-animation
-   */
-
-
-  const reflow = element => {
-    // eslint-disable-next-line no-unused-expressions
-    element.offsetHeight;
-  };
-
-  const getjQuery = () => {
-    const {
-      jQuery
-    } = window;
-
-    if (jQuery && !document.body.hasAttribute('data-bs-no-jquery')) {
-      return jQuery;
-    }
-
-    return null;
-  };
-
-  const DOMContentLoadedCallbacks = [];
-
-  const onDOMContentLoaded = callback => {
-    if (document.readyState === 'loading') {
-      // add listener on the first call when the document is in loading state
-      if (!DOMContentLoadedCallbacks.length) {
-        document.addEventListener('DOMContentLoaded', () => {
-          DOMContentLoadedCallbacks.forEach(callback => callback());
-        });
-      }
-
-      DOMContentLoadedCallbacks.push(callback);
-    } else {
-      callback();
-    }
-  };
-
-  const defineJQueryPlugin = plugin => {
-    onDOMContentLoaded(() => {
-      const $ = getjQuery();
-      /* istanbul ignore if */
-
-      if ($) {
-        const name = plugin.NAME;
-        const JQUERY_NO_CONFLICT = $.fn[name];
-        $.fn[name] = plugin.jQueryInterface;
-        $.fn[name].Constructor = plugin;
-
-        $.fn[name].noConflict = () => {
-          $.fn[name] = JQUERY_NO_CONFLICT;
-          return plugin.jQueryInterface;
-        };
-      }
-    });
-  };
-
-  /**
-   * --------------------------------------------------------------------------
-   * Bootstrap (v5.1.1): collapse.js
-   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
-   * --------------------------------------------------------------------------
-   */
-  /**
-   * ------------------------------------------------------------------------
-   * Constants
-   * ------------------------------------------------------------------------
-   */
-
-  const NAME = 'collapse';
-  const DATA_KEY = 'bs.collapse';
-  const EVENT_KEY = `.${DATA_KEY}`;
-  const DATA_API_KEY = '.data-api';
-  const Default = {
-    toggle: true,
-    parent: null
-  };
-  const DefaultType = {
-    toggle: 'boolean',
-    parent: '(null|element)'
-  };
-  const EVENT_SHOW = `show${EVENT_KEY}`;
-  const EVENT_SHOWN = `shown${EVENT_KEY}`;
-  const EVENT_HIDE = `hide${EVENT_KEY}`;
-  const EVENT_HIDDEN = `hidden${EVENT_KEY}`;
-  const EVENT_CLICK_DATA_API = `click${EVENT_KEY}${DATA_API_KEY}`;
-  const CLASS_NAME_SHOW = 'show';
-  const CLASS_NAME_COLLAPSE = 'collapse';
-  const CLASS_NAME_COLLAPSING = 'collapsing';
-  const CLASS_NAME_COLLAPSED = 'collapsed';
-  const CLASS_NAME_HORIZONTAL = 'collapse-horizontal';
-  const WIDTH = 'width';
-  const HEIGHT = 'height';
-  const SELECTOR_ACTIVES = '.collapse.show, .collapse.collapsing';
-  const SELECTOR_DATA_TOGGLE = '[data-bs-toggle="collapse"]';
-  /**
-   * ------------------------------------------------------------------------
-   * Class Definition
-   * ------------------------------------------------------------------------
-   */
-
-  class Collapse extends BaseComponent__default['default'] {
-    constructor(element, config) {
-      super(element);
-      this._isTransitioning = false;
-      this._config = this._getConfig(config);
-      this._triggerArray = [];
-      const toggleList = SelectorEngine__default['default'].find(SELECTOR_DATA_TOGGLE);
-
-      for (let i = 0, len = toggleList.length; i < len; i++) {
-        const elem = toggleList[i];
-        const selector = getSelectorFromElement(elem);
-        const filterElement = SelectorEngine__default['default'].find(selector).filter(foundElem => foundElem === this._element);
-
-        if (selector !== null && filterElement.length) {
-          this._selector = selector;
-
-          this._triggerArray.push(elem);
-        }
-      }
-
-      this._initializeChildren();
-
-      if (!this._config.parent) {
-        this._addAriaAndCollapsedClass(this._triggerArray, this._isShown());
-      }
-
-      if (this._config.toggle) {
-        this.toggle();
-      }
-    } // Getters
-
-
-    static get Default() {
-      return Default;
-    }
-
-    static get NAME() {
-      return NAME;
-    } // Public
-
-
-    toggle() {
-      if (this._isShown()) {
-        this.hide();
-      } else {
-        this.show();
-      }
-    }
-
-    show() {
-      if (this._isTransitioning || this._isShown()) {
-        return;
-      }
-
-      let actives = [];
-      let activesData;
-
-      if (this._config.parent) {
-        const children = SelectorEngine__default['default'].find(`.${CLASS_NAME_COLLAPSE} .${CLASS_NAME_COLLAPSE}`, this._config.parent);
-        actives = SelectorEngine__default['default'].find(SELECTOR_ACTIVES, this._config.parent).filter(elem => !children.includes(elem)); // remove children if greater depth
-      }
-
-      const container = SelectorEngine__default['default'].findOne(this._selector);
-
-      if (actives.length) {
-        const tempActiveData = actives.find(elem => container !== elem);
-        activesData = tempActiveData ? Collapse.getInstance(tempActiveData) : null;
-
-        if (activesData && activesData._isTransitioning) {
-          return;
-        }
-      }
-
-      const startEvent = EventHandler__default['default'].trigger(this._element, EVENT_SHOW);
-
-      if (startEvent.defaultPrevented) {
-        return;
-      }
-
-      actives.forEach(elemActive => {
-        if (container !== elemActive) {
-          Collapse.getOrCreateInstance(elemActive, {
-            toggle: false
-          }).hide();
-        }
-
-        if (!activesData) {
-          Data__default['default'].set(elemActive, DATA_KEY, null);
-        }
-      });
-
-      const dimension = this._getDimension();
-
-      this._element.classList.remove(CLASS_NAME_COLLAPSE);
-
-      this._element.classList.add(CLASS_NAME_COLLAPSING);
-
-      this._element.style[dimension] = 0;
-
-      this._addAriaAndCollapsedClass(this._triggerArray, true);
-
-      this._isTransitioning = true;
-
-      const complete = () => {
-        this._isTransitioning = false;
-
-        this._element.classList.remove(CLASS_NAME_COLLAPSING);
-
-        this._element.classList.add(CLASS_NAME_COLLAPSE, CLASS_NAME_SHOW);
-
-        this._element.style[dimension] = '';
-        EventHandler__default['default'].trigger(this._element, EVENT_SHOWN);
-      };
-
-      const capitalizedDimension = dimension[0].toUpperCase() + dimension.slice(1);
-      const scrollSize = `scroll${capitalizedDimension}`;
-
-      this._queueCallback(complete, this._element, true);
-
-      this._element.style[dimension] = `${this._element[scrollSize]}px`;
-    }
-
-    hide() {
-      if (this._isTransitioning || !this._isShown()) {
-        return;
-      }
-
-      const startEvent = EventHandler__default['default'].trigger(this._element, EVENT_HIDE);
-
-      if (startEvent.defaultPrevented) {
-        return;
-      }
-
-      const dimension = this._getDimension();
-
-      this._element.style[dimension] = `${this._element.getBoundingClientRect()[dimension]}px`;
-      reflow(this._element);
-
-      this._element.classList.add(CLASS_NAME_COLLAPSING);
-
-      this._element.classList.remove(CLASS_NAME_COLLAPSE, CLASS_NAME_SHOW);
-
-      const triggerArrayLength = this._triggerArray.length;
-
-      for (let i = 0; i < triggerArrayLength; i++) {
-        const trigger = this._triggerArray[i];
-        const elem = getElementFromSelector(trigger);
-
-        if (elem && !this._isShown(elem)) {
-          this._addAriaAndCollapsedClass([trigger], false);
-        }
-      }
-
-      this._isTransitioning = true;
-
-      const complete = () => {
-        this._isTransitioning = false;
-
-        this._element.classList.remove(CLASS_NAME_COLLAPSING);
-
-        this._element.classList.add(CLASS_NAME_COLLAPSE);
-
-        EventHandler__default['default'].trigger(this._element, EVENT_HIDDEN);
-      };
-
-      this._element.style[dimension] = '';
-
-      this._queueCallback(complete, this._element, true);
-    }
-
-    _isShown(element = this._element) {
-      return element.classList.contains(CLASS_NAME_SHOW);
-    } // Private
-
-
-    _getConfig(config) {
-      config = { ...Default,
-        ...Manipulator__default['default'].getDataAttributes(this._element),
-        ...config
-      };
-      config.toggle = Boolean(config.toggle); // Coerce string values
-
-      config.parent = getElement(config.parent);
-      typeCheckConfig(NAME, config, DefaultType);
-      return config;
-    }
-
-    _getDimension() {
-      return this._element.classList.contains(CLASS_NAME_HORIZONTAL) ? WIDTH : HEIGHT;
-    }
-
-    _initializeChildren() {
-      if (!this._config.parent) {
-        return;
-      }
-
-      const children = SelectorEngine__default['default'].find(`.${CLASS_NAME_COLLAPSE} .${CLASS_NAME_COLLAPSE}`, this._config.parent);
-      SelectorEngine__default['default'].find(SELECTOR_DATA_TOGGLE, this._config.parent).filter(elem => !children.includes(elem)).forEach(element => {
-        const selected = getElementFromSelector(element);
-
-        if (selected) {
-          this._addAriaAndCollapsedClass([element], this._isShown(selected));
-        }
-      });
-    }
-
-    _addAriaAndCollapsedClass(triggerArray, isOpen) {
-      if (!triggerArray.length) {
-        return;
-      }
-
-      triggerArray.forEach(elem => {
-        if (isOpen) {
-          elem.classList.remove(CLASS_NAME_COLLAPSED);
-        } else {
-          elem.classList.add(CLASS_NAME_COLLAPSED);
-        }
-
-        elem.setAttribute('aria-expanded', isOpen);
-      });
-    } // Static
-
-
-    static jQueryInterface(config) {
-      return this.each(function () {
-        const _config = {};
-
-        if (typeof config === 'string' && /show|hide/.test(config)) {
-          _config.toggle = false;
-        }
-
-        const data = Collapse.getOrCreateInstance(this, _config);
-
-        if (typeof config === 'string') {
-          if (typeof data[config] === 'undefined') {
-            throw new TypeError(`No method named "${config}"`);
-          }
-
-          data[config]();
-        }
-      });
-    }
-
-  }
-  /**
-   * ------------------------------------------------------------------------
-   * Data Api implementation
-   * ------------------------------------------------------------------------
-   */
-
-
-  EventHandler__default['default'].on(document, EVENT_CLICK_DATA_API, SELECTOR_DATA_TOGGLE, function (event) {
-    // preventDefault only for <a> elements (which change the URL) not inside the collapsible element
-    if (event.target.tagName === 'A' || event.delegateTarget && event.delegateTarget.tagName === 'A') {
-      event.preventDefault();
-    }
-
-    const selector = getSelectorFromElement(this);
-    const selectorElements = SelectorEngine__default['default'].find(selector);
-    selectorElements.forEach(element => {
-      Collapse.getOrCreateInstance(element, {
-        toggle: false
-      }).toggle();
-    });
-  });
-  /**
-   * ------------------------------------------------------------------------
-   * jQuery
-   * ------------------------------------------------------------------------
-   * add .Collapse to jQuery only if jQuery is present
-   */
-
-  defineJQueryPlugin(Collapse);
-
-  return Collapse;
-
-})));
-//# sourceMappingURL=collapse.js.map
-
-
-/***/ }),
-
 /***/ "./node_modules/bootstrap/js/dist/dom/data.js":
 /*!****************************************************!*\
   !*** ./node_modules/bootstrap/js/dist/dom/data.js ***!
@@ -5770,7 +5112,8 @@ const recipes = [
         "time": 10,
         "description": "Commencer par couper les feuilles de salade, ajouter les tomates cerises et le fromage découpé en cubes ou en boules avec la cuillère à melon. Découper le jambon de parme en fines lamelles. Ajouter la pomme elle aussi découpée en petit morceaux. Assaisonnez à votre gout. ",
         "appliance": "Saladier",
-        "ustensils": ["couteau", "cuillère à melon" ]
+        "ustensils": ["couteau", "cuillère à melon" ],
+        "image": "salade-tomate-mozza.jpg"
     },{
         "id": 12,
         "name": "Compote pomme rhubarbe",
@@ -7150,13 +6493,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ Arrays)
 /* harmony export */ });
-/* harmony import */ var _data_recipes__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../data/recipes */ "./src/js/data/recipes.js");
-
-
 //classe créée dans le but de normaliser le tableau des datas pour accélérer les recherches une fois le site chargé la première fois
 class Arrays{
-    constructor(){
-        this.recipes= _data_recipes__WEBPACK_IMPORTED_MODULE_0__.recipes;
+    constructor(recipes){
+        this.recipes= recipes;
     }
 
     navigationArrayGenerator(){
@@ -7177,7 +6517,8 @@ class Arrays{
                 "description" : recipe.description.toLowerCase(),
                 "ingredients" : ingredientsArray,
                 "appareils" : recipe.appliance.toLowerCase(),
-                "ustensiles" : recipe.ustensils
+                "ustensiles" : recipe.ustensils,
+                "recipe" : recipe
             });
         }
         
@@ -7199,14 +6540,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (/* binding */ Display)
 /* harmony export */ });
 /* harmony import */ var _globals__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./globals */ "./src/js/model/globals.js");
-/* harmony import */ var _data_recipes__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../data/recipes */ "./src/js/data/recipes.js");
-
 
 
 // classe qui gère les affichages
 class Display{
     constructor(){
-        this.recipes= _data_recipes__WEBPACK_IMPORTED_MODULE_1__.recipes;
+        // this.recipes= recipes;
         this.recipeCards= _globals__WEBPACK_IMPORTED_MODULE_0__.RECIPE_CARDS;
     }
 
@@ -7231,8 +6570,7 @@ class Display{
     //template des recettes à afficher avec les données envoyées par search
     displayRecipes(recipe){
         
-        if(recipe){
-            
+        if(recipe){            
             _globals__WEBPACK_IMPORTED_MODULE_0__.RECIPE_CARDS.innerHTML+= 
                 `<div class="col">
                     <div class="card h-100">
@@ -7252,15 +6590,12 @@ class Display{
                         </div>
                     </div>
                 </div>`;
-            
         }else _globals__WEBPACK_IMPORTED_MODULE_0__.RECIPE_CARDS.innerHTML= "";        
     }
 
-    //méthode pour l'afficahge des tags
-    displayTags(world, type, target){
-        
+    //méthode pour l'affichage des tags
+    displayTags(world, type, target){        
         _globals__WEBPACK_IMPORTED_MODULE_0__.SEARCH_WORLDS.innerHTML += `<button type="button" class="btn btn-${type} me-2 tag" target="${target}">${world}<span><i class="far fa-times-circle"></i></span></button>`;  
-        
     }
 
     displayErrorMessage(){
@@ -7429,24 +6764,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ FilterByClick)
 /* harmony export */ });
-/* harmony import */ var _data_recipes__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../data/recipes */ "./src/js/data/recipes.js");
-/* harmony import */ var _Display__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Display */ "./src/js/model/Display.js");
-/* harmony import */ var _Search__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Search */ "./src/js/model/Search.js");
-
+/* harmony import */ var _Display__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Display */ "./src/js/model/Display.js");
+/* harmony import */ var _Search__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Search */ "./src/js/model/Search.js");
 
 
 
 //classe qui va filtrer les résultats en fonction du clic sur les suggestions des dropdowns
 class FilterByClick{
     constructor(results, target, suggestion, array){
-        //nous avons besoin des recettes originales pour l'affichage
-        this.recipes= _data_recipes__WEBPACK_IMPORTED_MODULE_0__.recipes;
         //le tableau des résultats de recherche envoyé à l'instanciation de la classe
         this.results= results;
+        
         //le tableau original
         this.array= array;
         //la classe d'affichage
-        this.display= new _Display__WEBPACK_IMPORTED_MODULE_1__["default"]();
+        this.display= new _Display__WEBPACK_IMPORTED_MODULE_0__["default"]();
 
         //appelle automatiquement la méthode de tri
         this.filter(target, suggestion);
@@ -7475,13 +6807,12 @@ class FilterByClick{
                 console.log("no type of filter");
         }
 
-        const search= new _Search__WEBPACK_IMPORTED_MODULE_2__["default"](this.array, filteredResults);
+        //lance la recherche pour l'afficahge des dropdowns filtrés
+        const search= new _Search__WEBPACK_IMPORTED_MODULE_1__["default"](this.array, filteredResults);
 
         for(const result of filteredResults){
-            //trouve la recette dans les datas qui correspond à l'id du tableau filtré
-            const recipe= this.recipes.find(recipe => recipe.id === result.id);
-            //affiche dès qu'une recette est trouvée
-            this.display.displayRecipes(recipe);
+            //affiche dès qu'une recette est trouvée dans les résultats filtrés
+            this.display.displayRecipes(result.recipe);
         }
     }
 }
@@ -7566,12 +6897,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ Search)
 /* harmony export */ });
-/* harmony import */ var _data_recipes__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../data/recipes */ "./src/js/data/recipes.js");
-/* harmony import */ var _Display__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Display */ "./src/js/model/Display.js");
-/* harmony import */ var _EventsManager__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./EventsManager */ "./src/js/model/EventsManager.js");
-/* harmony import */ var _globals__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./globals */ "./src/js/model/globals.js");
-
-
+/* harmony import */ var _Display__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Display */ "./src/js/model/Display.js");
+/* harmony import */ var _EventsManager__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./EventsManager */ "./src/js/model/EventsManager.js");
+// import { recipes } from "../data/recipes";
 
 
 
@@ -7579,7 +6907,7 @@ __webpack_require__.r(__webpack_exports__);
 
 class Search{
     constructor(array, filteredArray){
-        this.recipes= _data_recipes__WEBPACK_IMPORTED_MODULE_0__.recipes;
+        // this.recipes= recipes;
         //le tableau de base
         this.array= array;
         //le tableau retourné dès que l'on tape 3 lettres dans l'input principal pour accélérer les recherches sur les lettres tapées ensuite
@@ -7587,8 +6915,7 @@ class Search{
         // la regex pour vérifier qu'au moins 3 lettres ont été tapées
         this.checkMessage= /^[\s\S]{3,}/;
         //la classe qui gère les affichages
-        this.display= new _Display__WEBPACK_IMPORTED_MODULE_1__["default"]();
-        // this.dropdownInputs= DROPDOWN_INPUTS;
+        this.display= new _Display__WEBPACK_IMPORTED_MODULE_0__["default"]();
 
         //on envoie toujours le tableau de base à ce constructeur, mais on peut aussi lui envoyer un tableau filtré
         //en fonction de l'envoi on lance la méthode qui cherche les suggestions des dropdowns à afficher avec l'un ou l'autre tableau
@@ -7603,7 +6930,6 @@ class Search{
         if(this.checkMessage.test(value)){
             // efface les recettes déjà présentes
             this.display.displayRecipes();
-            // const input= value.toLowerCase();
 
             //déclaration d'un tableau de résultats
             const results= [];
@@ -7618,28 +6944,25 @@ class Search{
                     //cascade de conditions qui permet d'ajouter une recette à notre tableau de résultats dès qu'il trouve un résultat qui correspond et de s'arrêter là pour passer à la recette suivante
                     //on cherche d'abord dans les noms
                     if(recipe.name.includes(value)){
-                        // console.log(recipe)
+                        
                         results.push(recipe);
-                        //et on affiche tout de suite la recette correspondante
-                        const recipeIndex= this.array.indexOf(recipe);                    
-                        this.display.displayRecipes(this.recipes[recipeIndex]);
-                        // break;
+                        //et on affiche tout de suite la recette correspondante            
+                        this.display.displayRecipes(recipe.recipe);
+                        
                     }else{
                         //si on n'a pas trouvé dans les noms, on cherche dans les descriptions
                         if(recipe.description.includes(value)){
-                            // console.log(recipe)
-                            results.push(recipe);
-                            const recipeIndex= this.array.indexOf(recipe);                    
-                            this.display.displayRecipes(this.recipes[recipeIndex]); 
-                            // break;
+                            
+                            results.push(recipe);                
+                            this.display.displayRecipes(recipe.recipe); 
+                            
                         }else{
                             // et si on n'a toujours pas trouvé dans la description, on cherche dans les ingrédients
                             for(const ingredient of recipe.ingredients){
                                 if(ingredient.includes(value)){
-                                    // console.log(recipe)
-                                    results.push(recipe);
-                                    const recipeIndex= this.array.indexOf(recipe);                    
-                                    this.display.displayRecipes(this.recipes[recipeIndex]);
+                                    
+                                    results.push(recipe);                
+                                    this.display.displayRecipes(recipe.recipe);
                                     break;
                                 }
                             }
@@ -7655,27 +6978,24 @@ class Search{
                 for(const recipe of this.first3LettersResults){
                     
                     if(recipe.name.includes(value)){
-                        // console.log(recipe)
-                        results.push(recipe);
-                        const recipeIndex= this.array.indexOf(recipe);                    
-                        this.display.displayRecipes(this.recipes[recipeIndex]);
-                        // break;
+                        
+                        results.push(recipe);                   
+                        this.display.displayRecipes(recipe.recipe);
+                        
                     }else{
                         
                         if(recipe.description.includes(value)){
-                            // console.log(recipe)
-                            results.push(recipe);
-                            const recipeIndex= this.array.indexOf(recipe);                    
-                            this.display.displayRecipes(this.recipes[recipeIndex]); 
-                            // break;
+                            
+                            results.push(recipe);                    
+                            this.display.displayRecipes(recipe.recipe); 
+                            
                         }else{
                                                 
                             for(const ingredient of recipe.ingredients){
                                 if(ingredient.includes(value)){
-                                    // console.log(recipe)
-                                    results.push(recipe);
-                                    const recipeIndex= this.array.indexOf(recipe);                    
-                                    this.display.displayRecipes(this.recipes[recipeIndex]);
+                                    
+                                    results.push(recipe);                 
+                                    this.display.displayRecipes(recipe.recipe);
                                     break;
                                 }
                             }
@@ -7738,7 +7058,7 @@ class Search{
         ustensilesArray= Array.from(new Set(ustensilesArray));
     
         //on instancie eventsManager pour pouvoir appeler la méthode sur les clics des suggestions créées et les inputs des dropdowns
-        const events= new _EventsManager__WEBPACK_IMPORTED_MODULE_2__["default"](this.array);
+        const events= new _EventsManager__WEBPACK_IMPORTED_MODULE_1__["default"](this.array);
         
         //on appelle la méthode displayDropdowns qui crée l'affichage des dropdowns et retourne un tableau des suggestions
         const suggestions= this.display.displayDropdowns(ingredientsArray, appareilsArray, ustensilesArray);
@@ -7857,39 +7177,27 @@ var __webpack_exports__ = {};
   \**********************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _sass_main_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./sass/main.scss */ "./src/sass/main.scss");
-/* harmony import */ var _node_modules_bootstrap_js_dist_button__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../node_modules/bootstrap/js/dist/button */ "./node_modules/bootstrap/js/dist/button.js");
-/* harmony import */ var _node_modules_bootstrap_js_dist_button__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_bootstrap_js_dist_button__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _node_modules_bootstrap_js_dist_collapse__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../node_modules/bootstrap/js/dist/collapse */ "./node_modules/bootstrap/js/dist/collapse.js");
-/* harmony import */ var _node_modules_bootstrap_js_dist_collapse__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_bootstrap_js_dist_collapse__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _node_modules_bootstrap_js_dist_dropdown__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../node_modules/bootstrap/js/dist/dropdown */ "./node_modules/bootstrap/js/dist/dropdown.js");
-/* harmony import */ var _node_modules_bootstrap_js_dist_dropdown__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_node_modules_bootstrap_js_dist_dropdown__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _js_model_Arrays__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./js/model/Arrays */ "./src/js/model/Arrays.js");
-/* harmony import */ var _js_model_EventsManager__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./js/model/EventsManager */ "./src/js/model/EventsManager.js");
+/* harmony import */ var _node_modules_bootstrap_js_dist_dropdown__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../node_modules/bootstrap/js/dist/dropdown */ "./node_modules/bootstrap/js/dist/dropdown.js");
+/* harmony import */ var _node_modules_bootstrap_js_dist_dropdown__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_bootstrap_js_dist_dropdown__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _js_data_recipes__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./js/data/recipes */ "./src/js/data/recipes.js");
+/* harmony import */ var _js_model_Arrays__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./js/model/Arrays */ "./src/js/model/Arrays.js");
+/* harmony import */ var _js_model_EventsManager__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./js/model/EventsManager */ "./src/js/model/EventsManager.js");
 //import du main.scss
 
 
-// Import just what we need
-
-// import 'bootstrap/js/dist/alert';
-
-// import 'bootstrap/js/dist/carousel';
+// import des fonctions liées au dropdown de bootsrap 5
 
 
-// import 'bootstrap/js/dist/modal';
-// import 'bootstrap/js/dist/popover';
-// import 'bootstrap/js/dist/scrollspy';
-// import 'bootstrap/js/dist/tab';
-// import 'bootstrap/js/dist/toast';
-// import 'bootstrap/js/dist/tooltip';
+
 
 
 
 
 //on crée un tableau normalisé avec les datas pour faciliter les recherches sur le site à son ouverture
-const arrays= new _js_model_Arrays__WEBPACK_IMPORTED_MODULE_4__["default"]();
+const arrays= new _js_model_Arrays__WEBPACK_IMPORTED_MODULE_3__["default"](_js_data_recipes__WEBPACK_IMPORTED_MODULE_2__.recipes);
 
 //on instancie la classe eventsManager qui va initialiser tous les events sur l'application et on lui passe le tableau de base en argument
-const events= new _js_model_EventsManager__WEBPACK_IMPORTED_MODULE_5__["default"](arrays.navigationArrayGenerator());
+const events= new _js_model_EventsManager__WEBPACK_IMPORTED_MODULE_4__["default"](arrays.navigationArrayGenerator());
 events.init();
 })();
 

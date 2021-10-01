@@ -1,13 +1,12 @@
-import { recipes } from "../data/recipes";
+// import { recipes } from "../data/recipes";
 import Display from "./Display";
 import EventsManager from "./EventsManager";
-import { DROPDOWN_INPUTS, RECIPE_CARDS } from "./globals";
 
 // Classe de recherche principale de l'application
 
 export default class Search{
     constructor(array, filteredArray){
-        this.recipes= recipes;
+        // this.recipes= recipes;
         //le tableau de base
         this.array= array;
         //le tableau retourné dès que l'on tape 3 lettres dans l'input principal pour accélérer les recherches sur les lettres tapées ensuite
@@ -16,7 +15,6 @@ export default class Search{
         this.checkMessage= /^[\s\S]{3,}/;
         //la classe qui gère les affichages
         this.display= new Display();
-        // this.dropdownInputs= DROPDOWN_INPUTS;
 
         //on envoie toujours le tableau de base à ce constructeur, mais on peut aussi lui envoyer un tableau filtré
         //en fonction de l'envoi on lance la méthode qui cherche les suggestions des dropdowns à afficher avec l'un ou l'autre tableau
@@ -31,7 +29,6 @@ export default class Search{
         if(this.checkMessage.test(value)){
             // efface les recettes déjà présentes
             this.display.displayRecipes();
-            // const input= value.toLowerCase();
 
             //déclaration d'un tableau de résultats
             const results= [];
@@ -46,28 +43,25 @@ export default class Search{
                     //cascade de conditions qui permet d'ajouter une recette à notre tableau de résultats dès qu'il trouve un résultat qui correspond et de s'arrêter là pour passer à la recette suivante
                     //on cherche d'abord dans les noms
                     if(recipe.name.includes(value)){
-                        // console.log(recipe)
+                        
                         results.push(recipe);
-                        //et on affiche tout de suite la recette correspondante
-                        const recipeIndex= this.array.indexOf(recipe);                    
-                        this.display.displayRecipes(this.recipes[recipeIndex]);
-                        // break;
+                        //et on affiche tout de suite la recette correspondante            
+                        this.display.displayRecipes(recipe.recipe);
+                        
                     }else{
                         //si on n'a pas trouvé dans les noms, on cherche dans les descriptions
                         if(recipe.description.includes(value)){
-                            // console.log(recipe)
-                            results.push(recipe);
-                            const recipeIndex= this.array.indexOf(recipe);                    
-                            this.display.displayRecipes(this.recipes[recipeIndex]); 
-                            // break;
+                            
+                            results.push(recipe);                
+                            this.display.displayRecipes(recipe.recipe); 
+                            
                         }else{
                             // et si on n'a toujours pas trouvé dans la description, on cherche dans les ingrédients
                             for(const ingredient of recipe.ingredients){
                                 if(ingredient.includes(value)){
-                                    // console.log(recipe)
-                                    results.push(recipe);
-                                    const recipeIndex= this.array.indexOf(recipe);                    
-                                    this.display.displayRecipes(this.recipes[recipeIndex]);
+                                    
+                                    results.push(recipe);                
+                                    this.display.displayRecipes(recipe.recipe);
                                     break;
                                 }
                             }
@@ -83,27 +77,24 @@ export default class Search{
                 for(const recipe of this.first3LettersResults){
                     
                     if(recipe.name.includes(value)){
-                        // console.log(recipe)
-                        results.push(recipe);
-                        const recipeIndex= this.array.indexOf(recipe);                    
-                        this.display.displayRecipes(this.recipes[recipeIndex]);
-                        // break;
+                        
+                        results.push(recipe);                   
+                        this.display.displayRecipes(recipe.recipe);
+                        
                     }else{
                         
                         if(recipe.description.includes(value)){
-                            // console.log(recipe)
-                            results.push(recipe);
-                            const recipeIndex= this.array.indexOf(recipe);                    
-                            this.display.displayRecipes(this.recipes[recipeIndex]); 
-                            // break;
+                            
+                            results.push(recipe);                    
+                            this.display.displayRecipes(recipe.recipe); 
+                            
                         }else{
                                                 
                             for(const ingredient of recipe.ingredients){
                                 if(ingredient.includes(value)){
-                                    // console.log(recipe)
-                                    results.push(recipe);
-                                    const recipeIndex= this.array.indexOf(recipe);                    
-                                    this.display.displayRecipes(this.recipes[recipeIndex]);
+                                    
+                                    results.push(recipe);                 
+                                    this.display.displayRecipes(recipe.recipe);
                                     break;
                                 }
                             }

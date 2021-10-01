@@ -1,14 +1,12 @@
-import { recipes } from "../data/recipes";
 import Display from "./Display";
 import Search from "./Search";
 
 //classe qui va filtrer les résultats en fonction du clic sur les suggestions des dropdowns
 export default class FilterByClick{
     constructor(results, target, suggestion, array){
-        //nous avons besoin des recettes originales pour l'affichage
-        this.recipes= recipes;
         //le tableau des résultats de recherche envoyé à l'instanciation de la classe
         this.results= results;
+        
         //le tableau original
         this.array= array;
         //la classe d'affichage
@@ -41,13 +39,12 @@ export default class FilterByClick{
                 console.log("no type of filter");
         }
 
+        //lance la recherche pour l'afficahge des dropdowns filtrés
         const search= new Search(this.array, filteredResults);
 
         for(const result of filteredResults){
-            //trouve la recette dans les datas qui correspond à l'id du tableau filtré
-            const recipe= this.recipes.find(recipe => recipe.id === result.id);
-            //affiche dès qu'une recette est trouvée
-            this.display.displayRecipes(recipe);
+            //affiche dès qu'une recette est trouvée dans les résultats filtrés
+            this.display.displayRecipes(result.recipe);
         }
     }
 }
