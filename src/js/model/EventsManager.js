@@ -28,6 +28,10 @@ export default class EventsManager{
         //initialise la recherche sur l'input de la barre principale
         this.navigationInput.addEventListener('input', ()=>{
             search.navigationResearch(this.navigationInput.value.trim().toLowerCase());
+            //on efface les éventuelles tags
+            SEARCH_WORLDS.innerHTML= "";
+            //et les entrées dans les inputs de dropdowns
+            this.dropdownInputs.forEach(input=> input.value= "");
         });
 
         //ajout d'eventListeners pour changer le placeholder des inputs dans les dropdowns
@@ -54,6 +58,7 @@ export default class EventsManager{
                 if(input.attributes.target.value === "ingredients") input.setAttribute("placeholder", "Ingrédients");
                 else if(input.attributes.target.value === "appareils") input.setAttribute("placeholder", "Appareil");
                 else input.setAttribute("placeholder", "Ustensiles");
+                input.textContent= "";
             })
         })
 
@@ -83,8 +88,8 @@ export default class EventsManager{
                 // on instancie la classe filterByClick qui va trier les résultats en focntion du mot cliqué
                 const filter= new FilterByClick(results, suggestion.attributes.target.value, suggestion.textContent, this.array);
 
-                // this.dropdownInputs.forEach(input=> input.value= "");
-                // this.navigationInput.value= "";
+                this.dropdownInputs.forEach(input=> input.value= "");
+                this.navigationInput.value= "";
 
                 //on déclenche la méthode qui va réagir au clic sur un tag créés plus haut
                 this.onClickTags();
@@ -133,5 +138,17 @@ export default class EventsManager{
                 }
             });            
         });
+    }
+
+    // évènement sur les liens du message d'erreur pour relancer une recherche sur ces mots si l'utilisateur clique dessus
+    onClickErrorLinks(links){
+        links.forEach(link=> link.addEventListener("click", (e)=> {
+            e.preventDefault();
+            //on affiche le mot choisi dans la nav principale
+            this.navigationInput.value= link.innerText;
+            //on lance la recherche sur ce mot comme si l'utilisateur l'avait entré lui-même
+            const search= new Search(this.array);
+            search.navigationResearch(this.navigationInput.value.trim().toLowerCase());
+        }))
     }
 }

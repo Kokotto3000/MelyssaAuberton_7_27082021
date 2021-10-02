@@ -1,19 +1,28 @@
-.btn-primary {
-    background-color: var(--bs-primary);
-    border-color: var(--bs-primary);
+button::first-letter{
+    text-transform: capitalize;
 }
 
-.btn-success {
-    background-color: var(--bs-success);
-    border-color: var(--bs-success);
+.btn{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &-primary {
+        background-color: var(--bs-primary);
+        border-color: var(--bs-primary);
+    }
+    
+    &-success {
+        background-color: var(--bs-success);
+        border-color: var(--bs-success);
+    }
+    
+    &-danger {
+        background-color: var(--bs-danger);
+        border-color: var(--bs-danger);
+    }
 }
 
-.btn-danger {
-    background-color: var(--bs-danger);
-    border-color: var(--bs-danger);
-}
-
-/*boutons tags*/
+//section des tags
 
 #search-worlds{
     display: flex;
@@ -22,28 +31,15 @@
     padding: 10px 0;
 }
 
-// .btn.up::after{
-//     font-family: "Font Awesome 5 Free";
-//     font-weight: 900;
-//     content: "\f077";
-//     position: absolute;
-//     top: 50%;
-//     left: 50%;
-//     transform: translate(-50%, -50%);
-// }
-
-.btn{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
 .tag{
     font-size: 14px;
-    text-transform: capitalize;
-    span{
+    font-weight: bold;
+    display: inline-block;
+    padding: 10px 20px;   
+    .far{
         margin-left: 10px;
         font-size: 20px;
+        vertical-align: middle;
     }
     &:hover{
         animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
@@ -51,5 +47,23 @@
     }
     &:focus{
         transform: scale(0.9);
+    }
+}
+
+//boutons des dropdowns
+
+.btn-lg{
+    padding: 20px;
+    &::after{
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        content: "\f078";
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translate(-50%, -50%);
+    }
+    &.show::after{
+        content: "\f077";
     }
 }

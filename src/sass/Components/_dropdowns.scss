@@ -1,3 +1,35 @@
+li{
+    list-style: none;
+    font-weight: 700;
+}
+
+li span{
+    font-weight: 400;
+}
+
+#dropdown-buttons .row{
+    --bs-gutter-x: 0;
+}
+
+.container-fluid{
+    padding: 0;
+}
+
+.btn-group{
+    display: flex;
+    flex-direction: column;
+    max-width: 50%;
+    border-radius: .3rem;
+    padding: 0;
+    height: fit-content;
+    height: -moz-fit-content;
+    width: fit-content;
+    width: -moz-fit-content;
+    &>.btn-group:not(:last-child)>.btn, &>.btn:not(:last-child):not(.dropdown-toggle){
+        border-radius: .3rem;
+    }
+}
+
 .dropdown-input{
     color: white;
     border: none;
@@ -14,11 +46,9 @@
     }
 }
 
-.dropdown-menu{
-    
+.dropdown-menu{    
     position: static !important;
     flex-flow: row wrap;
-    /* width: 800px; */
     transform: none !important;
     justify-content: flex-start;
     align-items: center;
@@ -48,11 +78,8 @@
 
 .dropdown-item{
     color: white;
-    // padding: .25rem 1.25rem;
     overflow: hidden;
-    // width: 30%;
     min-width: 175px;
-    text-transform: capitalize;
     text-align: left;
     align-self: stretch;
     &:hover, &:focus{
@@ -61,51 +88,4 @@
         transform: scale(1.01);
         font-weight: 700;
     }
-}
-
-
-
-
-/*****************test dropdown avec boostrap****************/
-
-.btn-group{
-    display: flex;
-    flex-direction: column;
-    max-width: 50%;
-    border-radius: .3rem;
-    padding: 0;
-    height: fit-content;
-    height: -moz-fit-content;
-    width: fit-content;
-    width: -moz-fit-content;
-}
-
-.btn-lg{
-    padding: 20px;
-}
-
-.btn-lg::after{
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    content: "\f078";
-    position: absolute;
-    top: 50%;
-    right: 0;
-    transform: translate(-50%, -50%);
-}
-
-.btn-lg.show::after{
-    content: "\f077";
-}
-
-.container-fluid{
-    padding: 0;
-}
-
-.btn-group>.btn-group:not(:last-child)>.btn, .btn-group>.btn:not(:last-child):not(.dropdown-toggle) {
-    border-radius: .3rem;
-}
-
-#dropdown-buttons .row{
-    --bs-gutter-x: 0;
 }

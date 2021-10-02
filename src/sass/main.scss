@@ -1,15 +1,5 @@
-
-
-
-// @import "./Utils/mixins";
-// Custom.scss
-// Option A: Include all of Bootstrap
-
-// Include any default variable overrides here (though functions won't be available)
-
 @import "../../node_modules/bootstrap/scss/bootstrap";
 
-// Then add additional custom code here
 @import "./Utils/variables";
 
 @import "./Base/base";
@@ -21,4 +11,3 @@
 @import "./Components/inputs";
 
 @import "./Layouts/header";
-@import "./Layouts/nav";

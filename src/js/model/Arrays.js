@@ -17,7 +17,7 @@ export default class Arrays{
             recipe.ustensils= recipe.ustensils.map(ustensile=> ustensile.toLowerCase());
             
             navigationArray.push({ 
-                "id" : recipe.id,
+                // "id" : recipe.id,
                 "name" : recipe.name.toLowerCase(),
                 "description" : recipe.description.toLowerCase(),
                 "ingredients" : ingredientsArray,
@@ -26,6 +26,9 @@ export default class Arrays{
                 "recipe" : recipe
             });
         }
+
+        //tri les recettes par ordre alphabétique sur leur nom, les recettes seront affichées par ordre alphabétique
+        navigationArray.sort((a,b) => (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0));
         
         return navigationArray;
     }

@@ -74,39 +74,86 @@ export default class Search{
 
             }else{
                 //au delà de 3 lettres, on trie sur le tableau créé aux 3 premières lettres
-                for(const recipe of this.first3LettersResults){
+                //on vérifie si un mot n'a pas été rentré d'un bloc (copier coller, suggestions...), dans ce cas, le tableau des premiers résultats sera vide
+                //s'il n'est pas vide
+                if(this.first3LettersResults.length !== 0){
+                    for(const recipe of this.first3LettersResults){
                     
-                    if(recipe.name.includes(value)){
-                        
-                        results.push(recipe);                   
-                        this.display.displayRecipes(recipe.recipe);
-                        
-                    }else{
-                        
-                        if(recipe.description.includes(value)){
+                        if(recipe.name.includes(value)){
                             
-                            results.push(recipe);                    
-                            this.display.displayRecipes(recipe.recipe); 
+                            results.push(recipe);                   
+                            this.display.displayRecipes(recipe.recipe);
                             
                         }else{
-                                                
-                            for(const ingredient of recipe.ingredients){
-                                if(ingredient.includes(value)){
-                                    
-                                    results.push(recipe);                 
-                                    this.display.displayRecipes(recipe.recipe);
-                                    break;
+                            
+                            if(recipe.description.includes(value)){
+                                
+                                results.push(recipe);                    
+                                this.display.displayRecipes(recipe.recipe); 
+                                
+                            }else{
+                                                    
+                                for(const ingredient of recipe.ingredients){
+                                    if(ingredient.includes(value)){
+                                        
+                                        results.push(recipe);                 
+                                        this.display.displayRecipes(recipe.recipe);
+                                        break;
+                                    }
                                 }
                             }
                         }
                     }
+                }else{
+                    //s'il est vide on lance une recherche comme si c'était les 3 premières lettres
+                    for(const recipe of this.array){
+                        
+                        if(recipe.name.includes(value)){
+                            
+                            results.push(recipe);
+                                      
+                            this.display.displayRecipes(recipe.recipe);
+                            
+                        }else{
+                            
+                            if(recipe.description.includes(value)){
+                                
+                                results.push(recipe);                
+                                this.display.displayRecipes(recipe.recipe); 
+                                
+                            }else{
+                                
+                                for(const ingredient of recipe.ingredients){
+                                    if(ingredient.includes(value)){
+                                        
+                                        results.push(recipe);                
+                                        this.display.displayRecipes(recipe.recipe);
+                                        break;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    this.first3LettersResults= results;
+
                 }
+                
             }
 
             //s'il n'y a aucun résultats, on affiche un message
+            //pour proposer des suggestions aléatoires et dynamiques dans le message, on tire 2 nombres au hasard qui désigneront des résultats
             // à mettre dans display...
             if(results.length <= 0){
-                this.display.displayErrorMessage();
+                //ici, on va non seulement afficher un message d'erreur mais aussi initier une recherche si l'utilisateur clique sur l'une des propositions
+                const events= new EventsManager(this.array);
+                const randomNumbers= [];
+                for(let i= 0; i<2; i++) {
+                    randomNumbers.push(Math.floor(Math.random()*this.array.length));
+                }
+                //on envoie les recettes avec les index aléatoires au display pour l'affichage
+                const links= this.display.displayErrorMessage(this.array[randomNumbers[0]].recipe, this.array[randomNumbers[1]].recipe);
+                events.onClickErrorLinks(links);
             }else{
                 //sinon on lance la recherche qui crée les listes de suggestions dans les dropdowns avec ce tableau de résultats
                 this.dropdownResearch(results);
@@ -137,6 +184,8 @@ export default class Search{
         }
         //retire tous les doublons du tableau et retourne le tableau "filtré"
         ingredientsArray= Array.from(new Set(ingredientsArray));
+        //trie le tableau par ordre alphabétique, les listes seront affichées par ordre alphabétique
+        ingredientsArray.sort();
 
         //même méthode pour les appareils
         let appareilsArray= [];
@@ -145,6 +194,7 @@ export default class Search{
            
         }
         appareilsArray= Array.from(new Set(appareilsArray));
+        appareilsArray.sort();
 
         //et pour les ustensiles
         let ustensilesArray= [];
@@ -155,6 +205,7 @@ export default class Search{
             }    
         }
         ustensilesArray= Array.from(new Set(ustensilesArray));
+        ustensilesArray.sort();
     
         //on instancie eventsManager pour pouvoir appeler la méthode sur les clics des suggestions créées et les inputs des dropdowns
         const events= new EventsManager(this.array);
