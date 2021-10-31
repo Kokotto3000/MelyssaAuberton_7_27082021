@@ -44,24 +44,26 @@ export default class Search{
                     //on cherche d'abord dans les noms
                     if(recipe.name.includes(value)){
                         
-                        results.push(recipe);
-                        //et on affiche tout de suite la recette correspondante            
+                        
+                        //on affiche tout de suite la recette correspondante            
                         this.display.displayRecipes(recipe.recipe);
+                        // on push le résultat dans le tableau des résultats
+                        results.push(recipe);
                         
                     }else{
                         //si on n'a pas trouvé dans les noms, on cherche dans les descriptions
                         if(recipe.description.includes(value)){
-                            
-                            results.push(recipe);                
+                                                                        
                             this.display.displayRecipes(recipe.recipe); 
+                            results.push(recipe);
                             
                         }else{
                             // et si on n'a toujours pas trouvé dans la description, on cherche dans les ingrédients
                             for(const ingredient of recipe.ingredients){
                                 if(ingredient.includes(value)){
-                                    
-                                    results.push(recipe);                
+                                                                                        
                                     this.display.displayRecipes(recipe.recipe);
+                                    results.push(recipe);
                                     break;
                                 }
                             }

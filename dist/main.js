@@ -6577,7 +6577,7 @@ class Display{
             _globals__WEBPACK_IMPORTED_MODULE_0__.RECIPE_CARDS.innerHTML+= 
                 `<div class="col">
                     <div class="card h-100">
-                        <img src="../assets/photos/${recipe.image}" class="card-img-top bg-secondary" alt="#" width="400" height="200" />
+                        <img src="../assets/photos/${recipe.image}" class="card-img-top bg-secondary" alt="photo de ${recipe.name}" width="400" height="200" />
                         <div class="card-body row bg-light">
                             <div class="col-md">
                                 <h2 class="card-title">${recipe.name}</h2>
@@ -6664,7 +6664,9 @@ class EventsManager{
         //initialise la recherche sur l'input de la barre principale
         this.navigationInput.addEventListener('input', ()=>{
             search.navigationResearch(this.navigationInput.value.trim().toLowerCase());
+            //on efface les éventuelles tags
             _globals__WEBPACK_IMPORTED_MODULE_0__.SEARCH_WORLDS.innerHTML= "";
+            //et les entrées dans les inputs de dropdowns
             this.dropdownInputs.forEach(input=> input.value= "");
         });
 
@@ -6774,10 +6776,13 @@ class EventsManager{
         });
     }
 
+    // évènement sur les liens du message d'erreur pour relancer une recherche sur ces mots si l'utilisateur clique dessus
     onClickErrorLinks(links){
         links.forEach(link=> link.addEventListener("click", (e)=> {
             e.preventDefault();
+            //on affiche le mot choisi dans la nav principale
             this.navigationInput.value= link.innerText;
+            //on lance la recherche sur ce mot comme si l'utilisateur l'avait entré lui-même
             const search= new _Search__WEBPACK_IMPORTED_MODULE_1__["default"](this.array);
             search.navigationResearch(this.navigationInput.value.trim().toLowerCase());
         }))

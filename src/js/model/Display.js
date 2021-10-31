@@ -38,7 +38,7 @@ export default class Display{
             RECIPE_CARDS.innerHTML+= 
                 `<div class="col">
                     <div class="card h-100">
-                        <img src="../assets/photos/${recipe.image}" class="card-img-top bg-secondary" alt="#" width="400" height="200" />
+                        <img src="../assets/photos/${recipe.image}" class="card-img-top bg-secondary" alt="photo de ${recipe.name}" width="400" height="200" />
                         <div class="card-body row bg-light">
                             <div class="col-md">
                                 <h2 class="card-title">${recipe.name}</h2>
