@@ -6677,13 +6677,13 @@ class EventsManager{
             e.stopPropagation();
             if(button.classList.contains("show")){
                 const input= button.querySelector("input");
-                if(input.attributes.target.value === "ingredients") input.setAttribute("placeholder", "Rechercher un ingrédient");
-                else if(input.attributes.target.value === "appareils") input.setAttribute("placeholder", "Rechercher un appareil");
+                if(input.attributes.name.value === "ingredients") input.setAttribute("placeholder", "Rechercher un ingrédient");
+                else if(input.attributes.name.value === "appareils") input.setAttribute("placeholder", "Rechercher un appareil");
                 else input.setAttribute("placeholder", "Rechercher un ustensile");
             }else{
                 const input= button.querySelector("input");
-                if(input.attributes.target.value === "ingredients") input.setAttribute("placeholder", "Ingrédients");
-                else if(input.attributes.target.value === "appareils") input.setAttribute("placeholder", "Appareils");
+                if(input.attributes.name.value === "ingredients") input.setAttribute("placeholder", "Ingrédients");
+                else if(input.attributes.name.value === "appareils") input.setAttribute("placeholder", "Appareils");
                 else input.setAttribute("placeholder", "Ustensiles");                    
             }
         }));
@@ -6691,8 +6691,8 @@ class EventsManager{
         //ici pour changer le placeholder au click à côté du bouton
         document.addEventListener("click", ()=> {            
             this.dropdownInputs.forEach(input=> {
-                if(input.attributes.target.value === "ingredients") input.setAttribute("placeholder", "Ingrédients");
-                else if(input.attributes.target.value === "appareils") input.setAttribute("placeholder", "Appareil");
+                if(input.attributes.name.value === "ingredients") input.setAttribute("placeholder", "Ingrédients");
+                else if(input.attributes.name.value === "appareils") input.setAttribute("placeholder", "Appareil");
                 else input.setAttribute("placeholder", "Ustensiles");
                 input.textContent= "";
             })
@@ -6740,7 +6740,7 @@ class EventsManager{
         for(const input of this.dropdownInputs){
             input.addEventListener("input", ()=> {
                 //on instancie la classe qui va filtrer les suggestions des dropdowns en fonction des lettres entrées dans l'input
-                const filter= new _FilterByInput__WEBPACK_IMPORTED_MODULE_4__["default"](results, ingredients, appareils, ustensiles, input.attributes.target.value, input.value.trim().toLowerCase(), array);
+                const filter= new _FilterByInput__WEBPACK_IMPORTED_MODULE_4__["default"](results, ingredients, appareils, ustensiles, input.attributes.name.value, input.value.trim().toLowerCase(), array);
                 // this.onClickTags();
             })
             
@@ -6986,24 +6986,26 @@ class Search{
                     //on cherche d'abord dans les noms
                     if(recipe.name.includes(value)){
                         
-                        results.push(recipe);
-                        //et on affiche tout de suite la recette correspondante            
+                        
+                        //on affiche tout de suite la recette correspondante            
                         this.display.displayRecipes(recipe.recipe);
+                        // on push le résultat dans le tableau des résultats
+                        results.push(recipe);
                         
                     }else{
                         //si on n'a pas trouvé dans les noms, on cherche dans les descriptions
                         if(recipe.description.includes(value)){
-                            
-                            results.push(recipe);                
+                                                                        
                             this.display.displayRecipes(recipe.recipe); 
+                            results.push(recipe);
                             
                         }else{
                             // et si on n'a toujours pas trouvé dans la description, on cherche dans les ingrédients
                             for(const ingredient of recipe.ingredients){
                                 if(ingredient.includes(value)){
-                                    
-                                    results.push(recipe);                
+                                                                                        
                                     this.display.displayRecipes(recipe.recipe);
+                                    results.push(recipe);
                                     break;
                                 }
                             }
